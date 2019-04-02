@@ -4,7 +4,8 @@
 import numpy
 # Import numpy which is a package for scientific computing with Python http://www.numpy.org/
 import matplotlib.pyplot as plt
-# Import plyplot module pyplot to generate interactive plots :https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html
+# Import plyplot module pyplot to generate interactive plots :https://matplotlib.org/users/pyplot_tutorial.html
+
 
 data = numpy.genfromtxt('iris.csv', delimiter=',')
 # use genfromtxt to read in the iris.csv text tile, which is saved in the pands-project directory
