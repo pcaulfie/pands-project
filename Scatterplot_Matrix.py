@@ -12,7 +12,8 @@ sns.set(style="ticks")
 df = sns.load_dataset("iris")
 
 # Construct iris scatterplot https://seaborn.pydata.org/generated/seaborn.pairplot.html
-sns.pairplot(df, hue="species")
+sns.pairplot(df, hue="species", palette="husl")
+# Use a different color palette, taken from https://seaborn.pydata.org/tutorial/color_palettes.html
 
 # show scatterplot
 plt.show()
