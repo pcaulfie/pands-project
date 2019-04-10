@@ -34,7 +34,10 @@ One is easy to seperate, 2 are not
 ### Summarize Data
 #### Max, Min, Mean, Standard Deviation
 #### Research other ways to summarize the data set
-#### include Charts & Graphs
+#### Swarmplot
+![alt text](https://github.com/pcaulfie/pands-project/blob/master/Swarmplot.png "Swarmplot")
+Figure: ![Swarmplot - Iris Dataset](https://github.com/pcaulfie/pands-project/blob/master/swarmplot.py)
+#### Scatterplot Matrix
 ![alt text](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot%20Matrix.png "Scatterplot Matrix")
 Figure: ![Scatterplot Matrix - Iris Dataset](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot_Matrix.py)
 #### Investigation of Python Packages using data set in their tutorials
