@@ -6,14 +6,19 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Solution https://seaborn.pydata.org/examples/scatterplot_matrix.html#
+
+# Select preset seaborn themes: ticks, used to give extra structure to the plots https://seaborn.pydata.org/tutorial/aesthetics.html
 sns.set(style="ticks")
 
-# Load iris data from built-in Seaborn dataset
+
+# Load iris data  as "df" from built-in Seaborn dataset located at https://github.com/mwaskom/seaborn-data/blob/master/iris.csv
 df = sns.load_dataset("iris")
 
-# Construct iris scatterplot https://seaborn.pydata.org/generated/seaborn.pairplot.html
-sns.pairplot(df, hue="species", palette="husl")
-# Use a different color palette, taken from https://seaborn.pydata.org/tutorial/color_palettes.html
+# Construct iris scatterplot using pairplot function - adapted from https://seaborn.pydata.org/generated/seaborn.pairplot.html
+sns.pairplot(df, hue="species", palette="husl", markers=["o", "s", "D"])
+# Hue is used to display each species in a different color.
+# Palette ="husl" used to change color palette to husl instead of default. ref: https://seaborn.pydata.org/tutorial/color_palettes.html
+# markers=["o", "s", "D"] are used to display different markers for each level of the hue variable:
 
 # show scatterplot
 plt.show()
