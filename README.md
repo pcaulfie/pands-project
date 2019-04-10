@@ -36,7 +36,7 @@ One is easy to seperate, 2 are not
 #### Research other ways to summarize the data set
 #### include Charts & Graphs
 ![alt text](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot%20Matrix.png "Scatterplot Matrix")
-Format: ![Alt Text](url)
+Figure: ![Scatterplot Matrix - Iris Dataset](url)
 #### Investigation of Python Packages using data set in their tutorials
 #### Pandas - e.g scatter diagrams 
 ### Summary of Investigation at beginning or end?
