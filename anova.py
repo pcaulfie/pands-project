@@ -8,6 +8,10 @@ from statsmodels.formula.api import ols
 df = pd.read_csv('iris.csv', delimiter=',')
 # print(df.describe())
 # print(df)
-iris_lm_one_categorical=ols('sepal_length ~ C(species)', data=df).fit() 
+# iris_lm_one_categorical=ols('sepal_length ~ C(species)', data=df).fit() 
 #Specify C for Categorical
-print(sm.stats.anova_lm(iris_lm_one_categorical, typ=2))
+# print(sm.stats.anova_lm(iris_lm_one_categorical, typ=2))
+
+iris_lm=ols('sepal_length ~ C(species) + sepal_width + petal_length + petal_width', data=df).fit() 
+#Specify C for Categorical
+print(sm.stats.anova_lm(iris_lm, typ=2))
