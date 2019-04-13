@@ -5,5 +5,7 @@
 import pandas as pd
 import statsmodels.api as sm
 from statsmodels.formula.api import ols
-df = pd.read_csv('Iris.csv')
-df.head()
+df = pd.read_csv('iris.csv', delimiter=',')
+print(df.describe())
+# print(df)
+
