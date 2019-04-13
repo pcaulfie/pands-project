@@ -6,6 +6,8 @@ import pandas as pd
 import statsmodels.api as sm
 from statsmodels.formula.api import ols
 df = pd.read_csv('iris.csv', delimiter=',')
-print(df.describe())
+# print(df.describe())
 # print(df)
-
+iris_lm_one_categorical=ols('sepal_length ~ C(species)', data=df).fit() 
+#Specify C for Categorical
+print(sm.stats.anova_lm(iris_lm_one_categorical, typ=2))
