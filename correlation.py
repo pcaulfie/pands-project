@@ -12,4 +12,8 @@ df = pd.read_csv('iris.csv', delimiter=',')
 # the columns using pearson method 
 print(df.corr(method ='pearson'))
 
+# To find the correlation among 
+# the columns using kendall method 
+print(df.corr(method ='kendall'))
+
 
