@@ -43,15 +43,14 @@ In order to start exploring the Iris Dataset, the first step was to load in the 
 Before I could begin to get insights into the dataset, I first needed to get to know the dataset. I began by getting a basic description of the data. I wanted some simple, easy-to-understand information on ther data, to give me a feel for the data. I thought it would be best to start with Mean, Min, Max and Standard Deviation. 
 
 #### Max, Min, Mean, Standard Deviation
-I used the describe() function to view some basic summary statistics. > This function returns the count, mean, standard deviation, minimum and maximum values and the quantiles of the data like percentile, mean, std etc > (Willems, K (2017). Here is an overivew of the program I wrote
+I used the describe() function to view some basic summary statistics. "This function returns the count, mean, standard deviation, minimum and maximum values and the quantiles of the data like percentile, mean, std etc." (Willems, K (2017). Here is an overivew of the program I wrote:
 * First you import the package as pd, 
 * Next, you use the read_csv() function, 
 * Then you use the describe() function to get various summary statistics
 * Finally you include the print function to display the results
 Link to program : https://github.com/pcaulfie/pands-project/blob/master/describe.py
 ##### Results
-![GitHub Logo](/describe.jpeg)
-Format: ![Summary of Data](https://github.com/pcaulfie/pands-project/blob/master/describe.JPG)
+![Summary Statistics](/describe.jpeg)
 ##### Interpretation of Results
 A quick look at the data shows that standard deviation of petal_length is greater than any of the other 3 variables. This is worth investigating further.
 
