@@ -54,7 +54,7 @@ Link to program : https://github.com/pcaulfie/pands-project/blob/master/describe
 ##### Interpretation of Results
 A quick look at the data shows that standard deviation of petal_length is greater than any of the other 3 variables. This is worth investigating further in case there are any outliers.
 #### Scatterplot Matrix
-Outliers, are data that contain values that diverge significantly from the majority of your other data (Willems, K (2017). I decided to make a scatter plot of to identify if there are any data points that don’t lie in the “expected” area of the plot. I used the Seaborn library to create the scatterplot (http://seaborn.pydata.org/). Seaborn has an impressive gallery and I decided to visualize the dataset using a scatterplot matrix. "A scatterplot matrix is a collection of scatterplots organized into a grid (or matrix). Each scatterplot shows the relationship between a pair of variables" (SAS Institure 2019).
+Outliers, are data that contain values that diverge significantly from the majority of your other data (Willems 2017). I decided to make a scatter plot of to identify if there are any data points that don’t lie in the “expected” area of the plot. I used the Seaborn library to create the scatterplot (http://seaborn.pydata.org/). Seaborn has an impressive gallery and I decided to visualize the dataset using a scatterplot matrix. "A scatterplot matrix is a collection of scatterplots organized into a grid (or matrix). Each scatterplot shows the relationship between a pair of variables" (SAS Institure 2019).
 Here is an overivew of the program I wrote adapted from an example by Waskom (2012-2018):
 * First you import seaborn as sns, I also had to install seaborn via the anaconda prompt using command: pip install seaborn
 * Then you import matplotlib.pyplot as plt
@@ -62,7 +62,7 @@ Here is an overivew of the program I wrote adapted from an example by Waskom (20
 * Then you load iris data  as "df" from built-in Seaborn dataset l
 * The next step is to construct iris scatterplot using pairplot function 
 * You have to decide how to customize the way the plots are displayed using Hue, Palette and Markers etc.
-* Finally you display the scatterplot using plt.show()
+* Finally you display the scatterplot using plt.show
 Link to program : https://github.com/pcaulfie/pands-project/blob/master/Scatterplot_Matrix.py
 ##### Results
 ![alt text](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot%20Matrix.png "Scatterplot Matrix")
