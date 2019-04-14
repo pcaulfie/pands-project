@@ -31,7 +31,12 @@ One is easy to seperate, 2 are not
 
 ## Investigation of the Data Set
 
-### Read in the csv file - preferably via url 
+### Importing The Data
+In order to start exploring the Iris Dataset, the first step was to load in the data. I used the Pandas library to simplify the task and I used the standard conventions (Willems, 2017): 
+* First you import the package as pd, 
+* Next, you use the read_csv() function, 
+* Then you pass the URL in which the dataset can be found: https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/d546eaee765268bf2f487608c537c05e22e4b221/iris.csv
+* Finally you add a header argument and delimiter to make sure that your data is read in correctly: As the first row of the dataset contains the columns names, I didnot need to pass a header argument, instead pandas infers that the first line will contain the column names. Likewise, Pandas defaults the delimiter as comma unless you are trying to read in a file in another format (pandas.pydata.org, 2019)). 
 ### Summarize Data
 #### Max, Min, Mean, Standard Deviation
 #### Research other ways to summarize the data set
@@ -54,3 +59,5 @@ Figure: ![Scatterplot Matrix - Iris Dataset](https://github.com/pcaulfie/pands-p
 4. Computer Hope (2018) *How To Create A CSV File* [Online] Available at: https://www.computerhope.com/jargon/n/newline.htm [Accessed 1 April 2019].
 5. Allison, L (2003) *Ronald Aylmer Fisher (1890-1962)* [Online] Available at: http://users.monash.edu/~lloyd/tildeImages/People/Fisher.RA/ [Accessed 13 April 2019]
 6. Aldrich, J (2003:2018) *A Guide to R. A. Fisher* [Online] Available at: http://www.economics.soton.ac.uk/staff/aldrich/fisherguide/rafframe.htm [Accessed 13 April 2019]
+7. Willems, K (2017) *Python Exploratory Data Analysis Tutorial* [Online] Available at: https://www.datacamp.com/community/tutorials/exploratory-data-analysis-python [Accessed 13 April 2019]
+8. pandas.pydata.org (2019) *pandas: powerful Python data analysis toolkit* [Online] Available at: http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html [Accessed 13 April 2019]
