@@ -2,6 +2,7 @@
 ## Introduction
 
 This document contains my research and investigation of the Iris Data Set. 
+![Iris Setosa](https://github.com/pcaulfie/pands-project/blob/master/iris-setosa.png) ![Iris Versicolor](https://github.com/pcaulfie/pands-project/blob/master/iris-versicolor.png) ![Iris Virginica](https://github.com/pcaulfie/pands-project/blob/master/iris-virginica.png)
 
 ## Getting Started
 
@@ -48,7 +49,7 @@ I used the describe() function to view some basic summary statistics. "This func
 * Next, you use the read_csv() function, 
 * Then you use the describe() function to get various summary statistics
 * Finally you include the print function to display the results
-Link to program : https://github.com/pcaulfie/pands-project/blob/master/describe.py
+* Link to program : https://github.com/pcaulfie/pands-project/blob/master/describe.py
 ##### Results
 ![Summary Statistics](https://github.com/pcaulfie/pands-project/blob/master/describe.JPG)
 ##### Interpretation of Results
@@ -63,7 +64,7 @@ Here is an overivew of the program I wrote adapted from an example by Waskom (20
 * The next step is to construct iris scatterplot using pairplot function 
 * You have to decide how to customize the way the plots are displayed using Hue, Palette and Markers etc.
 * Finally you display the scatterplot using plt.show
-Link to program : https://github.com/pcaulfie/pands-project/blob/master/Scatterplot_Matrix.py
+* Link to program : https://github.com/pcaulfie/pands-project/blob/master/Scatterplot_Matrix.py
 ##### Results
 ![alt text](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot%20Matrix.png "Scatterplot Matrix")
 Figure: ![Scatterplot Matrix - Iris Dataset](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot_Matrix.py)
