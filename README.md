@@ -39,8 +39,21 @@ In order to start exploring the Iris Dataset, the first step was to load in the 
 * Finally you add a header argument and delimiter to make sure that your data is read in correctly (pandas.pydata.org, 2019).
   * As the first row of the dataset contains the columns names, I did not need to pass a header argument, instead pandas infers that the     first line will contain the column names. 
   * Pandas defaults the delimiter as comma unless you are trying to read in a file in another format. 
-### Summarize Data
+### Basic Description of the Data 
+Before I could begin to get insights into the dataset, I first needed to get to know the dataset. I began by getting a basic description of the data. I wanted some simple, easy-to-understand information on ther data, to give me a feel for the data. I thought it would be best to start with Mean, Min, Max and Standard Deviation. 
+
 #### Max, Min, Mean, Standard Deviation
+I used the describe() function to view some basic summary statistics. "This function returns the count, mean, standard deviation, minimum and maximum values and the quantiles of the data like percentile, mean, std etc." (Willems, K (2017). Here is an overivew of the program I wrote:
+* First you import the package as pd, 
+* Next, you use the read_csv() function, 
+* Then you use the describe() function to get various summary statistics
+* Finally you include the print function to display the results
+Link to program : https://github.com/pcaulfie/pands-project/blob/master/describe.py
+##### Results
+![Summary Statistics](https://github.com/pcaulfie/pands-project/blob/master/describe.JPG)
+##### Interpretation of Results
+A quick look at the data shows that standard deviation of petal_length is greater than any of the other 3 variables. This is worth investigating further.
+
 #### Research other ways to summarize the data set
 #### Swarmplot
 ![alt text](https://github.com/pcaulfie/pands-project/blob/master/Swarmplot.png "Swarmplot")
@@ -63,3 +76,4 @@ Figure: ![Scatterplot Matrix - Iris Dataset](https://github.com/pcaulfie/pands-p
 6. Aldrich, J (2003:2018) *A Guide to R. A. Fisher* [Online] Available at: http://www.economics.soton.ac.uk/staff/aldrich/fisherguide/rafframe.htm [Accessed 13 April 2019]
 7. Willems, K (2017) *Python Exploratory Data Analysis Tutorial* [Online] Available at: https://www.datacamp.com/community/tutorials/exploratory-data-analysis-python [Accessed 13 April 2019]
 8. pandas.pydata.org (2019) *pandas: powerful Python data analysis toolkit* [Online] Available at: http://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html [Accessed 13 April 2019]
+
