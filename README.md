@@ -2,7 +2,7 @@
 ## Introduction
 
 This document contains my research and investigation of the Iris Data Set. 
-![Iris Setosa](https://github.com/pcaulfie/pands-project/blob/master/iris-setosa.png) ![Iris Versicolor](https://github.com/pcaulfie/pands-project/blob/master/iris-versicolor.png) ![Iris Virginica](https://github.com/pcaulfie/pands-project/blob/master/iris-virginica.png)
+![Iris Species](https://github.com/pcaulfie/pands-project/blob/master/iris-setosa.png) 
 
 ## Getting Started
 
