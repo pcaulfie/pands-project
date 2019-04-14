@@ -12,7 +12,7 @@ sns.set()
 sns.set_context("paper")
 # Load iris data  as "df" from built-in Seaborn dataset located at https://github.com/mwaskom/seaborn-data/blob/master/iris.csv
 iris = sns.load_dataset("iris")
-# Construct iris swarplot 
+# Construct iris swarmplot 
 # define the area of the plot, ie 15 x 10 inchs) adapted from https://www.kaggle.com/lalitharajesh/iris-dataset-exploratory-data-analysis/data
 plt.figure(figsize=(15,10))
 # Use subplot to compare different views of data side by side https://www.kaggle.com/lalitharajesh/iris-dataset-exploratory-data-analysis/data
