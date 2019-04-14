@@ -50,7 +50,7 @@ I used the describe() function to view some basic summary statistics. "This func
 * Finally you include the print function to display the results
 Link to program : https://github.com/pcaulfie/pands-project/blob/master/describe.py
 ##### Results
-![Summary Statistics](/describe.jpeg)
+![Summary Statistics](https://github.com/pcaulfie/pands-project/blob/master/describe.JPG)
 ##### Interpretation of Results
 A quick look at the data shows that standard deviation of petal_length is greater than any of the other 3 variables. This is worth investigating further.
 
