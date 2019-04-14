@@ -32,11 +32,13 @@ One is easy to seperate, 2 are not
 ## Investigation of the Data Set
 
 ### Importing The Data
-In order to start exploring the Iris Dataset, the first step was to load in the data. I used the Pandas library to simplify the task and I used the standard conventions (Willems, 2017): 
+In order to start exploring the Iris Dataset, the first step was to load in the data. I used the Pandas library (https://pandas.pydata.org/) to simplify the task and I used the standard conventions (Willems, 2017): 
 * First you import the package as pd, 
 * Next, you use the read_csv() function, 
-* Then you pass the URL in which the dataset can be found: https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/d546eaee765268bf2f487608c537c05e22e4b221/iris.csv
-* Finally you add a header argument and delimiter to make sure that your data is read in correctly: As the first row of the dataset contains the columns names, I didnot need to pass a header argument, instead pandas infers that the first line will contain the column names. Likewise, Pandas defaults the delimiter as comma unless you are trying to read in a file in another format (pandas.pydata.org, 2019)). 
+* Then you pass the URL in which the dataset can be found. I chose to use the following URL as the source: https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/d546eaee765268bf2f487608c537c05e22e4b221/iris.csv
+* Finally you add a header argument and delimiter to make sure that your data is read in correctly (pandas.pydata.org, 2019).
+  * As the first row of the dataset contains the columns names, I did not need to pass a header argument, instead pandas infers that the     first line will contain the column names. 
+  * Pandas defaults the delimiter as comma unless you are trying to read in a file in another format. 
 ### Summarize Data
 #### Max, Min, Mean, Standard Deviation
 #### Research other ways to summarize the data set
