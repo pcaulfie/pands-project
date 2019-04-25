@@ -24,13 +24,14 @@ The data set is a comma-separated values (csv) file with 150 records (rows of da
 * Each record (row of data) is located on a separate line, delimited by a line break.
 * The first line of the file is the header line. The header line contains the names of the 5 fields: Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, and Species.
 * The fields of data in the header line and each record (row) are delimited with a comma
-
+#### Table
+To view the iris dataset, click link below
+![iris](iris.md)
 ### What do each of the columns look like
 #### Statistical Properties
 One is easy to seperate, 2 are not
-#### Insert Table
-![iris](iris.md)
-![link2](https://github.com/pcaulfie/pands-project/blob/master/iris.md)
+
+
 ## Investigation of the Data Set
 
 ### Importing The Data
