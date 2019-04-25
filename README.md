@@ -58,7 +58,7 @@ I used the describe() function to view some basic summary statistics. "This func
 A quick look at the data shows that standard deviation of petal_length is greater than any of the other 3 variables. This is worth investigating further in case there are any outliers.
 
 #### Querying The Data
-I wanted to investigate the petal_length results, to see how many rows of data would have a petal length less than 1 standard deviation from the mean. The mean is 3.75cm and the standard deviation is 1.76, so I decided to check how many rows of data had a petal length less than 2.Here is an overivew of the program I wrote:
+I wanted to investigate the petal_length results, to see how many rows of data would have a petal length less than 1 standard deviation from the mean. The mean is 3.75cm and the standard deviation is 1.76, so I decided to check how many rows of data had a petal length less than 2. Here is an overivew of the program I wrote:
 * First you import the package pandas as pd, 
 * Next you make the data frame from the iris.csv file 
 * Then you use the query function to filter the data frame for Petal length < 2
