@@ -29,7 +29,7 @@ The data set is a comma-separated values (csv) file with 150 records (rows of da
 #### Statistical Properties
 One is easy to seperate, 2 are not
 #### Insert Table
-!(iris.md)
+[iris.csv](File:iris.md)
 ## Investigation of the Data Set
 
 ### Importing The Data
