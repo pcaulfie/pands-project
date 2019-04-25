@@ -56,6 +56,19 @@ I used the describe() function to view some basic summary statistics. "This func
 ![Summary Statistics](https://github.com/pcaulfie/pands-project/blob/master/describe.JPG)
 ##### Interpretation of Results
 A quick look at the data shows that standard deviation of petal_length is greater than any of the other 3 variables. This is worth investigating further in case there are any outliers.
+
+#### Querying The Data
+I wanted to investigate the petal_length results, to see how many rows of data would have a petal length less than 1 standard deviation from the mean. The mean is 3.75cm and the standard deviation is 1.76, so I decided to check how many rows of data had a petal length less than 2.Here is an overivew of the program I wrote:
+* First you import the package pandas as pd, 
+* Next you make the data frame from the iris.csv file 
+* Then you use the query function to filter the data frame for Petal length < 2
+* The final step is to display the results
+* Link to program : https://github.com/pcaulfie/pands-project/blob/master/test.py
+##### Results
+![test results](test.txt)
+##### Interpretation of Results
+It is clear from the results that all of the iris setosa samples have a petal length less than 2. This is significant as this is more than one standard deviation from the mean. If the species setosa differes significantly for one variable (petal length), the next step would be to test other variables. A quick way to do this is to visualize the data using a scatter plot matrix. This will help identify any other outliers in the data.
+
 #### Scatterplot Matrix
 Outliers, are data that contain values that diverge significantly from the majority of your other data (Willems Mar-2017). I decided to make a scatter plot of to identify if there are any data points that don’t lie in the “expected” area of the plot. I used the Seaborn library to create the scatterplot (http://seaborn.pydata.org/). Seaborn has an impressive gallery and I decided to visualize the dataset using a scatterplot matrix. "A scatterplot matrix is a collection of scatterplots organized into a grid (or matrix). Each scatterplot shows the relationship between a pair of variables" (SAS Institure 2019).
 Here is an overivew of the program I wrote adapted from an example by Waskom (2012-2018):
