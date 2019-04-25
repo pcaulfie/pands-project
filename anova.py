@@ -1,4 +1,4 @@
-# # Paul Caulfield, 2019
+# Paul Caulfield, 2019
 # My program creates an ANOVA table in python using the Iris dataset. 
 
 # Solution adapted from https://www.kaggle.com/morenoh149/iris-anova-table-python
