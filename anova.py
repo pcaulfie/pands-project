@@ -12,8 +12,6 @@ from statsmodels.formula.api import ols
 # adapted from https://www.datacamp.com/community/tutorials/exploratory-data-analysis-python
 df = pd.read_csv("https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/d546eaee765268bf2f487608c537c05e22e4b221/iris.csv", delimiter=',')
 
-print(df.describe())
-
 # iris_lm_one_categorical=ols('sepal_length ~ C(species)', data=df).fit() 
 #Specify C for Categorical
 # print(sm.stats.anova_lm(iris_lm_one_categorical, typ=2))
