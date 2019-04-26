@@ -8,10 +8,12 @@
 import pandas as pd 
   
 # making data frame from csv file  
-data = pd.read_csv("iris.csv") 
+df = pd.read_csv("iris.csv") 
 
 # Filter data where Petal length < 2?
-result = data.query('petal_length < 2')
+result = df.query('petal_length < 2')
+# show only "species column": adapted from https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html
+species = result.iloc[:, 4:5]
 
 # display
-print(result)
+print(species)
