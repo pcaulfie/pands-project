@@ -223,6 +223,7 @@ I wanted to investigate the petal_length results, to see how many rows of data w
 * First you import the package pandas as pd, 
 * Next you make the data frame from the iris.csv file 
 * Then you use the query function to filter the data frame for Petal length < 2
+* The I modified which columns would be displayed using df.iloc function
 * The final step is to display the results
 * Link to program : https://github.com/pcaulfie/pands-project/blob/master/test.py
 ##### Results
