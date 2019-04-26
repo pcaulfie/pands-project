@@ -232,7 +232,7 @@ It is clear from the results that all the iris setosa samples have a petal lengt
 I needed a quick way to summarize the data and sort the results by species to see if the initial findings about iris setosa are backed up I also wanted to test the other variables, to see if there are any other significant patterns in the data. I decided to use a pivot table to summarize the data. I adapted my program from solution I found in https://towardsdatascience.com/python-for-data-science-from-scratch-part-ii-e4dd4b943aba. 
 * First you import the package pandas as pd, and numpy as np,
 * Next, you use the read_csv() function, 
-* Then you use create the pivot tables, by selecting the values you want to display and the index field (species) and what argument you wish to display, i.e. mean and standard deviation,
+* Then you use create the pivot tables, by selecting the values you want to display and the index field (species) and what aggfunc you wish to apply to aggregate the data i.e. mean and standard deviation,
 * Finally, you include the print function to display the results and titles for each pivot table.
 * Link to program : https://github.com/pcaulfie/pands-project/blob/master/pivot.py
 ##### Results
