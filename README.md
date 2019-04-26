@@ -6,7 +6,7 @@ This document contains my research and investigation of the Iris Data Set.
 
 ## Getting Started
 
-I have created a GitHub Repository where you can access my project, its files, and all the versions of its files that Git saves. See link https://github.com/pcaulfie/pands-project
+I have created a GitHub Repository where you can access my project, its files, and the commit history. See link: https://github.com/pcaulfie/pands-project.
 
 ## Iris Flower Data Set - Overview / Short Summary
 ### About This Data Set
@@ -14,26 +14,27 @@ The Iris Flower Data Set also known as Fisher's or Andersons Data Set is a datab
 The data set is a record of the measurements taken from a sample of fifty flowers from each of the three species. The variables measured are; sepal length, sepal width, petal length and petal width. 
 This data set has become an important reference ever since it was first cited by Fisher in his 1936 paper and it is cited regularly to this day, see UCI Machine Learning Repository.
 Fisher (1936) outlines how the data set could be used to illustrate a model which could be used to identify patterns in the data. He interpreted the data, identifying variables could be used to predict which population class an object belonged to. 
-The data was recorded by botanist Edgar Andersen (Anderson, Edgar 1936). 
+The data was originally recorded by botanist Edgar Andersen (Anderson, Edgar 1936). 
 ### About Ronald Fisher
-Ronald Fisher was a British mathematician, biologist and geneticist who is credited as the father of modern statistics (Allison, 2003). He prioneered the development of modern statistical techniques such as Analysis of Variance, Distribution Theory, Mathematical Likelihood and Estimation. He applied these techniques in the area of genetics where he developed theories on topics such as Natural Selection and Fiduciary Inheritance. He was also credited with establishing a new era in experiment design and statistical sampling techniques (Aldrich, 2003).
+Ronald Fisher was a British mathematician, biologist and geneticist who is credited as the father of modern statistics (Allison, 2003). He pioneered the development of modern statistical techniques such as Analysis of Variance, Distribution Theory, Mathematical Likelihood and Estimation. He applied these techniques in the area of genetics where he developed theories on topics such as Natural Selection and Fiduciary Inheritance. He was also credited with establishing a new era in experiment design and statistical sampling techniques (Aldrich, 2003).
 
 ## Data Set
 ### Format
-The data set is a comma-separated values (csv) file with 150 records (rows of data) and 5 fields (columns) named Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, and Species. > CSV is a simple file format used to store tabular data, such as a spreadsheet or database. Files in the CSV format can be imported to and exported from programs that store data in tables, such as Microsoft Excel or OpenOffice Calc. (Computer Hope, 2018)
+The data set is a comma-separated values (csv) file with 150 records (rows of data) and 5 fields (columns) named sepal_length, sepal_width, petal_length, petal_width, and species. CSV is a simple file format used to store tabular data, such as a spreadsheet or database. Files in the CSV format can be imported to and exported from programs that store data in tables, such as Microsoft Excel or OpenOffice Calc (Computer Hope, 2018).
 * Each record (row of data) is located on a separate line, delimited by a line break.
-* The first line of the file is the header line. The header line contains the names of the 5 fields: Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, and Species.
-* The fields of data in the header line and each record (row) are delimited with a comma
+* The first line of the file is the header line. The header line contains the names of the 5 fields: sepal_length, sepal_width, petal_length, petal_width, and species.
+* The fields of data in the header line and each record (row) are delimited with a comma.
 #### Iris Dataset
 Below is a table displaying the Iris Dataset. I created this table as follows:
-* I converted the iris.csv to iris.md using the csvtomd program https://github.com/mplewis/csvtomd
+* I converted the iris.csv to iris.md using the csvtomd program https://github.com/mplewis/csvtomd.
 * To do this I first had to install the csvtomd program using the command pip3 install csvtomd at the CLI.
-* Next I ran the command csvtomd iris.csv > iris.md 
+* Next, I ran the command on the command line: csvtomd iris.csv > iris.md .
 ![Command Line](https://github.com/pcaulfie/pands-project/blob/master/csvtomd%20command.JPG)
-* The I pushed the iris.md file to the repository
-* I opened iris.md in the repositiory and clicked on the "Raw" button, which opened the https://raw.githubusercontent.com/pcaulfie/pands-project/master/iris.md which is an unprocessed version of the iris.md file
+* The I pushed the iris.md file to the repository.
+* I opened iris.md in the repository and clicked on the "Raw" button, which opened the https://raw.githubusercontent.com/pcaulfie/pands-project/master/iris.md which is an unprocessed version of the iris.md file. 
 * I then copied the raw table and pasted it into the readme.
 
+**Table 1.0 The Iris Dataset**
 sepal_length  |  sepal_width  |  petal_length  |  petal_width  |  species
 --------------|---------------|----------------|---------------|------------
 5.1           |  3.5          |  1.4           |  0.2          |  setosa
@@ -188,103 +189,99 @@ sepal_length  |  sepal_width  |  petal_length  |  petal_width  |  species
 5.9           |  3            |  5.1           |  1.8          |  virginica
 ![iris](iris.md)
 
-### What do each of the columns look like
-#### Statistical Properties
-One is easy to seperate, 2 are not
-
-
 ## Investigation of the Data Set
 
-### Importing The Data
-In order to start exploring the Iris Dataset, the first step was to load in the data. I used the Pandas library (https://pandas.pydata.org/) to simplify the task and I used the standard conventions (Willems, Mar-2017): 
+### Importing the Data
+Before I could begin exploring the Iris Dataset, I had to load in the data. I used the Pandas library (https://pandas.pydata.org/) to simplify the task and I used the standard conventions (Willems, Mar-2017): 
 * First you import the Pandas package as pd, 
 * Next, you use the read_csv() function, 
 * Then you pass the URL in which the dataset can be found. I chose to use the following URL as the source: https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/d546eaee765268bf2f487608c537c05e22e4b221/iris.csv
-* Finally you add a header argument and delimiter to make sure that your data is read in correctly (pandas.pydata.org, 2019).
+* Finally, you add a header argument and delimiter to make sure that your data is read in correctly (pandas.pydata.org, 2019).
   * As the first row of the dataset contains the columns names, I did not need to pass a header argument, instead pandas infers that the     first line will contain the column names. 
   * Pandas defaults the delimiter as comma unless you are trying to read in a file in another format. 
+
 ### Basic Description of the Data 
-Before I could begin to get insights into the dataset, I first needed to get to know the dataset. I began by getting a basic description of the data. I wanted some simple, easy-to-understand information on ther data, to give me a feel for the data. I thought it would be best to start with Mean, Min, Max and Standard Deviation. 
+Before I could begin to get insights into the dataset, I first needed to get to know the dataset. I began by getting a basic description of the data. I wanted some simple, easy-to-understand information on the data, to give me a feel for the data. I thought it would be best to start with Mean, Min, Max and Standard Deviation. 
 
 #### Max, Min, Mean, Standard Deviation
-I used the describe() function to view some basic summary statistics. "This function returns the count, mean, standard deviation, minimum and maximum values and the quantiles of the data like percentile, mean, std etc." (Willems, Mar-2017). Here is an overivew of the program I wrote:
+I used the describe() function to view some basic summary statistics. "This function returns the count, mean, standard deviation, minimum and maximum values and the quantiles of the data like percentile, mean, std etc." (Willems, Mar-2017). Here is an overview of the program I wrote:
 * First you import the package pandas as pd, 
 * Next, you use the read_csv() function, 
-* Then you use the describe() function to get various summary statistics
-* Finally you include the print function to display the results
+* Then you use the describe() function to get various summary statistics,
+* Finally, you include the print function to display the results.
 * Link to program : https://github.com/pcaulfie/pands-project/blob/master/describe.py
 ##### Results
 ![Summary Statistics](https://github.com/pcaulfie/pands-project/blob/master/describe.JPG)
 ##### Interpretation of Results
 A quick look at the data shows that standard deviation of petal_length is greater than any of the other 3 variables. This is worth investigating further in case there are any outliers.
 
-#### Querying The Data
-I wanted to investigate the petal_length results, to see how many rows of data would have a petal length less than 1 standard deviation from the mean. The mean is 3.75cm and the standard deviation is 1.76, so I decided to check how many rows of data had a petal length less than 2. Here is an overivew of the program I wrote:
+#### Querying the Data
+I wanted to investigate the petal_length results, to see how many rows of data would have a petal length less than 1 standard deviation from the mean. The mean is 3.75cm and the standard deviation is 1.76, so I decided to check how many rows of data had a petal length less than 2. Here is an overview of the program I wrote:
 * First you import the package pandas as pd, 
-* Next you make the data frame from the iris.csv file 
-* Then you use the query function to filter the data frame for Petal length < 2
-* The I modified which columns would be displayed using df.iloc function
-* The final step is to display the results
+* Next you make the data frame from the iris.csv file ,
+* Then you use the query function to filter the data frame for Petal length < 2,
+* The I modified which columns would be displayed using df.iloc function,
+* The final step is to display the results.
 * Link to program : https://github.com/pcaulfie/pands-project/blob/master/test.py
 ##### Results
 ![test results](test.txt)
 ##### Interpretation of Results
-It is clear from the results that all of the iris setosa samples have a petal length less than 2. This is significant as this is more than one standard deviation from the mean. If the species setosa differes significantly for one variable (petal length), the next step would be to test other variables. A quick way to do this is to visualize the data using a scatter plot matrix. This will help identify any other outliers in the data.
+It is clear from the results that all the iris setosa samples have a petal length less than 2. This is significant as this is more than one standard deviation from the mean. If the species setosa differs significantly for one variable (petal length), the next step would be to test other variables. 
 
 #### Pivot Table
-I needed a quick way to summarize the data and sort the results by species to see if the initial finings about iris setosa are backed up and also to see if there are any other significant patterns in the data. I decided to use a pivot table to summarize the data. I adapted my program from solution I found in https://towardsdatascience.com/python-for-data-science-from-scratch-part-ii-e4dd4b943aba. 
-* First you import the package pandas as pd, and numpy as np
+I needed a quick way to summarize the data and sort the results by species to see if the initial findings about iris setosa are backed up I also wanted to test the other variables, to see if there are any other significant patterns in the data. I decided to use a pivot table to summarize the data. I adapted my program from solution I found in https://towardsdatascience.com/python-for-data-science-from-scratch-part-ii-e4dd4b943aba. 
+* First you import the package pandas as pd, and numpy as np,
 * Next, you use the read_csv() function, 
-* Then you use create the pivote tables, by selecting the values you want to display and the index field (species) and what argument you wish to display, ie mean and standard deviation. https://github.com/pcaulfie/pands-project/blob/master/pivot.py
-* Finally you include the print function to display the results and titles for each pivot table
+* Then you use create the pivot tables, by selecting the values you want to display and the index field (species) and what argument you wish to display, i.e. mean and standard deviation,
+* Finally, you include the print function to display the results and titles for each pivot table.
 * Link to program : https://github.com/pcaulfie/pands-project/blob/master/pivot.py
 ##### Results
 ![](https://github.com/pcaulfie/pands-project/blob/master/pivot%20table.JPG)
 ##### Interpretation of Results
-I was able to intrepret the following from the pivot tables:
-* The species setosa, differs significantly from other species, for the mean value of the variables petal_length and petal_width.
-* The species setosa, also differs significantly from other species, for the standard deviation value of the variables petal_length and petal_width.
+I was able to interpret the following from the pivot tables:
+* The species setosa, differs significantly from other species, for the mean value of the variable's petal_length and petal_width.
+* The species setosa, also differs significantly from other species, for the standard deviation value of the variable's petal_length and petal_width.
 * The mean and standard deviation of the other 2 species seem to be positively correlated, suggesting that they may have some common characteristics. The species setosa, seem to share little in common with the species versicolor and virginica.
 
 #### Scatterplot Matrix
-Outliers, are data that contain values that diverge significantly from the majority of your other data (Willems Mar-2017). I decided to make a scatter plot of to identify if there are any data points that don’t lie in the “expected” area of the plot. I used the Seaborn library to create the scatterplot (http://seaborn.pydata.org/). Seaborn has an impressive gallery and I decided to visualize the dataset using a scatterplot matrix. "A scatterplot matrix is a collection of scatterplots organized into a grid (or matrix). Each scatterplot shows the relationship between a pair of variables" (SAS Institure 2019).
-Here is an overivew of the program I wrote adapted from an example by Waskom (2012-2018):
+Outliers are data that contain values that diverge significantly from most of your other data (Willems Mar-2017). I decided to make a scatter plot of to identify if there are any data points that don’t lie in the “expected” area of the plot. I used the Seaborn library to create the scatterplot (http://seaborn.pydata.org/). Seaborn has an impressive gallery and I decided to visualize the dataset using a scatterplot matrix. "A scatterplot matrix is a collection of scatterplots organized into a grid (or matrix). Each scatterplot shows the relationship between a pair of variables" (SAS Institute 2019).
+Here is an overview of the program I wrote adapted from an example by Waskom (2012-2018):
 * First you import seaborn as sns, I also had to install seaborn via the anaconda prompt using command: pip install seaborn
 * Then you import matplotlib.pyplot as plt
 * Next you set the themes
 * Then you load iris data  as "df" from built-in Seaborn dataset l
 * The next step is to construct iris scatterplot using pairplot function 
-* You have to decide how to customize the way the plots are displayed using Hue, Palette and Markers etc.
-* Finally you display the scatterplot using plt.show
+* You decide how to customize the way the plots are displayed using Hue, Palette and Markers etc.
+* Finally, you display the scatterplot using plt.show
 * Link to program : https://github.com/pcaulfie/pands-project/blob/master/Scatterplot_Matrix.py
 ##### Results
 ![alt text](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot%20Matrix.png "Scatterplot Matrix")
 Figure: ![Scatterplot Matrix - Iris Dataset](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot_Matrix.py)
 ##### Interpretation of Results
-The first this you will notice when you look at the data is that the species setosa does not seem to have any relationship with the other two species. I was able to intrepret the following:
+The first this you will notice when you look at the data is that the species setosa does not seem to have any relationship with the other two species. I was able to interpret the following:
 * There appears to be a strong relationship between sepal length and sepal width.
-* Each pair of variables are positively correlated, when you exclude setosa. That is to say that as one variable increases, the other     variable tends to increase too.
+* Each pair of variables are positively correlated, when you exclude setosa. This means that as one variable increases, the other     variable tends to increase too.
 * The data points in the scatterplot for petal length and petal width are the most tightly clustered along an imaginary line.
 * These findings could form the basis of some hypotheses which I will test later, including Analysis of Variance (ANOVA).
 
 #### Swarmplot Matrix
 As there is a lot of overlapping data in a scatterplot, it can be difficult to get a feel for the distribution of values. There are many techniques to visualize the data to provide insights into the distribution of values, such as boxplots and violinplots. I decided to use swarmplots which is a scatterplot with non-overlapping points.
-Here is an overivew of the program I wrote adapted from an example by Willems (Aug-2017):
-* First you import seaborn as sns
-* Then you import matplotlib.pyplot as plt
-* Set context to `"paper"` control the plot elements. Paper is the smallest of the four preset contexts
-* Load iris data  as "df" from built-in Seaborn dataset
-* Define the area of the plot
-* Use subplot to compare different views of data side by side 
-* Construct iris swarmplot 
-* Show swarmplot
+Here is an overview of the program I wrote adapted from an example by Willems (Aug-2017):
+* First you import seaborn as sns,
+* Then you import matplotlib.pyplot as plt,
+* Set context to `"paper"` control the plot elements. Paper is the smallest of the four preset contexts,
+* Load iris data  as "df" from built-in Seaborn dataset,
+* Define the area of the plot,
+* Use subplot to compare different views of data side by side ,
+* Construct iris swarmplot,
+* Show swarmplot.
 * Link to program : https://github.com/pcaulfie/pands-project/blob/master/swarmplot.py
 ##### Results
 ![alt text](https://github.com/pcaulfie/pands-project/blob/master/Swarmplot.png "Swarmplot")
 Figure: ![Swarmplot - Iris Dataset](https://github.com/pcaulfie/pands-project/blob/master/swarmplot.py)
 ##### Interpretation of Results
-I was able to intrepret the following from the swarmplot:
-* In the species setosa, the distibution is different for each of the 4 variables
+I was able to interpret the following from the swarmplot:
+* In the species setosa, the distribution is different for each of the 4 variables
 * For each of the other two species, there appears to be a uniform distribution.
 * The data points in the swarmplot for petal length and petal width are the most narrowly distributed, whereas the distribution of the other variables was much wider.
 * These findings could form the basis of some hypotheses which I will test later, including Analysis of Variance (ANOVA).
