@@ -231,6 +231,21 @@ I wanted to investigate the petal_length results, to see how many rows of data w
 ##### Interpretation of Results
 It is clear from the results that all of the iris setosa samples have a petal length less than 2. This is significant as this is more than one standard deviation from the mean. If the species setosa differes significantly for one variable (petal length), the next step would be to test other variables. A quick way to do this is to visualize the data using a scatter plot matrix. This will help identify any other outliers in the data.
 
+#### Pivot Table
+I needed a quick way to summarize the data and sort the results by species to see if the initial finings about iris setosa are backed up and also to see if there are any other significant patterns in the data. I decided to use a pivot table to summarize the data. I adapted my program from solution I found in https://towardsdatascience.com/python-for-data-science-from-scratch-part-ii-e4dd4b943aba. 
+* First you import the package pandas as pd, and numpy as np
+* Next, you use the read_csv() function, 
+* Then you use create the pivote tables, by selecting the values you want to display and the index field (species) and what argument you wish to display, ie mean and standard deviation. https://github.com/pcaulfie/pands-project/blob/master/pivot.py
+* Finally you include the print function to display the results and titles for each pivot table
+* Link to program : https://github.com/pcaulfie/pands-project/blob/master/pivot.py
+##### Results
+![](https://github.com/pcaulfie/pands-project/blob/master/pivot%20table.JPG)
+##### Interpretation of Results
+I was able to intrepret the following from the pivot tables:
+* The species setosa, differs significantly from other species, for the mean value of the variables petal_length and petal_width.
+* The species setosa, also differs significantly from other species, for the standard deviation value of the variables petal_length and petal_width.
+* The mean and standard deviation of the other 2 species seem to be positively correlated, suggesting that they may have some common characteristics. The species setosa, seem to share little in common with the species versicolor and virginica.
+
 #### Scatterplot Matrix
 Outliers, are data that contain values that diverge significantly from the majority of your other data (Willems Mar-2017). I decided to make a scatter plot of to identify if there are any data points that don’t lie in the “expected” area of the plot. I used the Seaborn library to create the scatterplot (http://seaborn.pydata.org/). Seaborn has an impressive gallery and I decided to visualize the dataset using a scatterplot matrix. "A scatterplot matrix is a collection of scatterplots organized into a grid (or matrix). Each scatterplot shows the relationship between a pair of variables" (SAS Institure 2019).
 Here is an overivew of the program I wrote adapted from an example by Waskom (2012-2018):
@@ -251,6 +266,7 @@ The first this you will notice when you look at the data is that the species set
 * Each pair of variables are positively correlated, when you exclude setosa. That is to say that as one variable increases, the other     variable tends to increase too.
 * The data points in the scatterplot for petal length and petal width are the most tightly clustered along an imaginary line.
 * These findings could form the basis of some hypotheses which I will test later, including Analysis of Variance (ANOVA).
+
 #### Swarmplot Matrix
 As there is a lot of overlapping data in a scatterplot, it can be difficult to get a feel for the distribution of values. There are many techniques to visualize the data to provide insights into the distribution of values, such as boxplots and violinplots. I decided to use swarmplots which is a scatterplot with non-overlapping points.
 Here is an overivew of the program I wrote adapted from an example by Willems (Aug-2017):
