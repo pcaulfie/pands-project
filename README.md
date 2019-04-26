@@ -28,7 +28,8 @@ The data set is a comma-separated values (csv) file with 150 records (rows of da
 Below is a table displaying the Iris Dataset. I created this table as follows:
 * I converted the iris.csv to iris.md using the csvtomd program https://github.com/mplewis/csvtomd
 * To do this I first had to install the csvtomd program using the command pip3 install csvtomd at the CLI.
-* Next I ran the command csvtomd iris.csv > iris.md
+* Next I ran the command csvtomd iris.csv > iris.md 
+![Command Line](https://github.com/pcaulfie/pands-project/blob/master/csvtomd%20command.JPG)
 * The I pushed the iris.md file to the repository
 * I opened iris.md in the repositiory and clicked on the "Raw" button, which opened the https://raw.githubusercontent.com/pcaulfie/pands-project/master/iris.md which is an unprocessed version of the iris.md file
 * I then copied the raw table and pasted it into the readme.
