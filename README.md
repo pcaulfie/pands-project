@@ -53,7 +53,8 @@ Below is a table displaying the Iris Dataset. I created this table as follows:
 * I opened iris.md in the repository and clicked on the "Raw" button, which opened the https://raw.githubusercontent.com/pcaulfie/pands-project/master/iris.md which is an unprocessed version of the iris.md file. 
 * I then copied the raw table and pasted it into the readme.
 
-**Table 1.0 The Iris Dataset**
+Table 1.0 The Iris Dataset
+
 sepal_length  |  sepal_width  |  petal_length  |  petal_width  |  species
 --------------|---------------|----------------|---------------|------------
 5.1           |  3.5          |  1.4           |  0.2          |  setosa
