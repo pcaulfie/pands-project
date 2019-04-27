@@ -24,6 +24,19 @@ The data set is a comma-separated values (csv) file with 150 records (rows of da
 * Each record (row of data) is located on a separate line, delimited by a line break.
 * The first line of the file is the header line. The header line contains the names of the 5 fields: sepal_length, sepal_width, petal_length, petal_width, and species.
 * The fields of data in the header line and each record (row) are delimited with a comma.
+### Summary of Dataframe
+I used the Pandas dataframe.info() function is used to get a quick overview of the datase. This overview is useful to have when conductiong exploratory data analysis (Ranjan, 2018). I used the dataframe.info() function to gather information about the number of rows, columns, column data types, memory usage, etc. I adpated the program from https://www.datacamp.com/community/tutorials/categorical-data and https://www.geeksforgeeks.org/python-pandas-dataframe-info/
+* Step 1: import pandas as pd 
+* Step 2: Create the dataframe df = pd.read_csv("iris.csv") 
+* Step 3: Print the full summary of the dataframe with null count excluded 
+* Link to program: https://github.com/pcaulfie/pands-project/blob/master/info.py
+#### Results
+![info](https://github.com/pcaulfie/pands-project/blob/master/info.JPG)
+#### Interpretation of Results
+* The dataframe contains 150 rows and 5 columns
+* 4 columns (sepal_length, sepal_width, petal_length, petal_width) contain floating point (decimal) numbers in the format float64. Float 64 is defined as by Scipy (2008-2009) as "Double precision float: sign bit, 11 bits exponent, 52 bits mantissa".
+* 1 column (species) contains dtype = object which is used used to represent "string" or text fields.
+
 ### Data Type
 The data set is made up of two data types: categorical and continous data.
 * Categorical Data: This data usually has a limited or fixed, number of possible values, stored as string values which are used to describe some traits of the observations, for example gender or age group  (Pathak 2018). In the iris dataset, the variable "species" represents categorical data, as it has a fixed number of values: setosa, versicolor or virginica. Since there is no order to the data, this data can also be described as nominal data as opposed to ordinal data which has an order, scale or ranking associated with them, for example economic class or Likert Scale.
@@ -313,3 +326,5 @@ I was able to interpret the following from the swarmplot:
 11. Willems, K (Aug-2017) *Python Seaborn Tutorial For Beginners* [Online] Available at: https://www.datacamp.com/community/tutorials/seaborn-python-tutorial#load [Accessed 13 April 2019]
 12. Chris, user:354577 (2016) *what-do-raw-githubusercontent-com-urls-represent" [Online] Available at:https://raw.githubusercontent.com/pcaulfie/pands-project/master/iris.md [Accessed 26 April 2019]
 13. Pathak, M (2018) *Handling Categorical Data in Python* [Online] Available at: https://www.datacamp.com/community/tutorials/categorical-data [Accessed 27 April 2019] 
+14. Ranjan, S (2018) *Python | Pandas dataframe.info()* [Online] Available at:   https://www.geeksforgeeks.org/python-pandas-dataframe-info/ [Accessed 27 April 2019] 
+15. Scipy Community, (2008-2009) *Data types*  [Online] Available at: https://docs.scipy.org/doc/numpy-1.13.0/user/basics.types.html [Accessed 27 April 2019] 
