@@ -322,6 +322,22 @@ I adapted the solution from https://www.kaggle.com/morenoh149/iris-anova-table-p
 ##### Interpretation of Results
 * As the p value (Pr(>F) for all tests, is > 0.05 (α), the null hypothesis must be rejected. The null hypotheses states that the means of all species are all equal, this is usually defined as a significance level (denoted as α or alpha) of 0.05. This back up the earlier findings that the differences between the species is statistically significant.
 
+#### Hypotheses Testing - Two Way Anova
+So far we have learned that the species setosa appears to be very different to the other two species. I needed to test this hypotheses. I used two-way analysis of variance (ANOVA) to determine whether there is any statistically significant differences between the species.
+I adapted the solution from https://www.kaggle.com/morenoh149/iris-anova-table-python
+* Import the `pandas` library as `pd`, 
+* Import the `statsmodels` library as `sm`
+* Import ols (OLS regression library)
+* Load in the datato the dataframe with `read_csv()` 
+* create a multi-dimensional array using species as categorical and a combination of variables (dimension)
+* Specify C for Categorical - in this case I use species as the categorical
+* display results in Type 2 Anova dataframe
+* repeat steps for other combination variables, so I can view results for all combinations at same time
+* Link to program: https://github.com/pcaulfie/pands-project/blob/master/2wayanova.py
+##### Results
+![Anova](https://github.com/pcaulfie/pands-project/blob/master/Two%20Way%20Anova.JPG)
+##### Interpretation of Results
+* As the p value (Pr(>F) for all 3 tests, is > 0.05 (α), the null hypothesis must be rejected. The null hypotheses states that the means of all species are all equal, this is usually defined as a significance level (denoted as α or alpha) of 0.05. This back up the earlier findings that the differences between the species is statistically significant.
 
 
 #### Investigation of Python Packages using data set in their tutorials
