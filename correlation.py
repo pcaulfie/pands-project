@@ -8,12 +8,14 @@ import pandas as pd
   
 # Making data frame from the csv file 
 df = pd.read_csv('iris.csv', delimiter=',') 
-# To find the correlation among 
-# the columns using pearson method 
+# Use corr() function to find the correlation among the columns using pearson method 
+print("")
+print("Pearson Method")
 print(df.corr(method ='pearson'))
 
-# To find the correlation among 
-# the columns using kendall method 
+# Use corr() function to find the correlation among the columns using kendall method 
+print("")
+print("Kendall Method")
 print(df.corr(method ='kendall'))
 
 
