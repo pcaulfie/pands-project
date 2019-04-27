@@ -26,14 +26,15 @@ The data set is a comma-separated values (csv) file with 150 records (rows of da
 * The fields of data in the header line and each record (row) are delimited with a comma.
 ### Summary of Dataframe
 I used the Pandas dataframe.info() function is used to get a quick overview of the datase. This overview is useful to have when conductiong exploratory data analysis (Ranjan, 2018). I used the dataframe.info() function to gather information about the number of rows, columns, column data types, memory usage, etc. I adpated the program from https://www.datacamp.com/community/tutorials/categorical-data and https://www.geeksforgeeks.org/python-pandas-dataframe-info/
-* Step 1: import pandas as pd 
-* Step 2: Create the dataframe df = pd.read_csv("iris.csv") 
-* Step 3: Print the full summary of the dataframe with null count excluded 
+* Step 1: import pandas as pd,
+* Step 2: Create the dataframe df = pd.read_csv("iris.csv"),
+* Step 3: Print the full summary of the dataframe with null count excluded,
 * Link to program: https://github.com/pcaulfie/pands-project/blob/master/info.py
 #### Results
 ![info](https://github.com/pcaulfie/pands-project/blob/master/info.JPG)
 #### Interpretation of Results
-* The dataframe contains 150 rows and 5 columns
+* The dataframe rangeindex is 150 which means that it contains 150 rows which are indexed beginning with 0 for first row and ending with 150 for last row.
+* The dataframe contains 5 columns or series.
 * 4 columns (sepal_length, sepal_width, petal_length, petal_width) contain floating point (decimal) numbers in the format float64. Float 64 is defined as by Scipy (2008-2009) as "Double precision float: sign bit, 11 bits exponent, 52 bits mantissa".
 * 1 column (species) contains dtype = object which is used used to represent "string" or text fields.
 
