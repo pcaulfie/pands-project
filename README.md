@@ -284,6 +284,23 @@ The first this you will notice when you look at the data is that the species set
 * The data points in the scatterplot for petal length and petal width are the most tightly clustered along an imaginary line.
 * These findings could form the basis of some hypotheses which I will test later, including Analysis of Variance (ANOVA).
 
+#### Correlation
+The scatterplot above suggested that there is a strong relationship between sepal length and sepal width. I decided to use Pandas dataframe.corr() to find the pairwise correlation of all columns in the dataframe, this would prove my theory that sepal length and sepal width have a high correlation. I adapted my program from https://www.geeksforgeeks.org/python-pandas-dataframe-corr/
+* import pandas as pd 
+* Create the data frame from the csv file 
+* Use corr() function to find the correlation among the columns using pearson method 
+* Use corr() function to find the correlation among the columns using kendall method 
+* Print results
+* Link to program: https://github.com/pcaulfie/pands-project/blob/master/correlation.py
+##### Results
+![correlation](https://github.com/pcaulfie/pands-project/blob/master/Correlation%20-%20Pearson%20%26%20Kendall%20Method.JPG)
+##### Interpretation of Results
+* The correlation coefficient of a variable with itself is 1.
+* The correlation coefficient of the following pairs of variables was strongest; petal_length & petal width, suggesting a strong positive relationship, when one variable increases, the other increases.
+* The correlation coefficient of the following pairs of variables was next strongest; petal_length & sepal length, suggesting a strong positive relationship, ie as one variable increases, the other increases.
+* The correlation coefficient of the following pairs of variables was smallest; sepal_length & sepal width, suggesting a very weak negative relationship between, when one variable increases, the other decreases.
+* The correlation coefficient of the following pairs of variables was also weak; petal_width & sepal width, suggesting a very weak negative relationship between, when one variable increases, the other decreases.
+
 #### Swarmplot Matrix
 As there is a lot of overlapping data in a scatterplot, it can be difficult to get a feel for the distribution of values. There are many techniques to visualize the data to provide insights into the distribution of values, such as boxplots and violinplots. I decided to use swarmplots which is a scatterplot with non-overlapping points.
 Here is an overview of the program I wrote adapted from an example by Willems (Aug-2017):
