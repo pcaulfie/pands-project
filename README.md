@@ -26,8 +26,8 @@ The data set is a comma-separated values (csv) file with 150 records (rows of da
 * The fields of data in the header line and each record (row) are delimited with a comma.
 ### Data Type
 The data set is made up of two data types: categorical and continous data.
-* Categorical Data: This data usually has a limited or fixed, number of possible values, stored as string values which are used to describe some traits of the observations, for example gender or age group  (Pathak 2018). In the iris dataset, the variable "species" represents categorical data, as it has a fixed number of values: setosa, versicolor or virginica. Since there is no order to the data, this data can also be described as nominal data as opposed to ordinal data which has an order or ranking associated with them, for example economic class or Likert Scale.
-* Continous Data: Pathak (2018) describes continous data as "numeric variables that have an infinite number of values between any two values". Examples of continuous data are, temperature, height, weight. In the iris dataset, the variables sepal_length, sepal_width, petal_length, petal_width represents continous data.
+* Categorical Data: This data usually has a limited or fixed, number of possible values, stored as string values which are used to describe some traits of the observations, for example gender or age group  (Pathak 2018). In the iris dataset, the variable "species" represents categorical data, as it has a fixed number of values: setosa, versicolor or virginica. Since there is no order to the data, this data can also be described as nominal data as opposed to ordinal data which has an order, scale or ranking associated with them, for example economic class or Likert Scale.
+* Continuous Data: Pathak (2018) describes continuous data as "numeric variables that have an infinite number of values between any two values". Examples of continuous data are, temperature, height, weight. In the iris dataset, the variables sepal_length, sepal_width, petal_length, petal_width represents continuous data.
 
 #### Iris Dataset
 Below is a table displaying the Iris Dataset. I created this table as follows:
