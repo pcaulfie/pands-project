@@ -24,6 +24,11 @@ The data set is a comma-separated values (csv) file with 150 records (rows of da
 * Each record (row of data) is located on a separate line, delimited by a line break.
 * The first line of the file is the header line. The header line contains the names of the 5 fields: sepal_length, sepal_width, petal_length, petal_width, and species.
 * The fields of data in the header line and each record (row) are delimited with a comma.
+### Data Type
+The data set is made up of two data types: categorical and continous data.
+* Categorical Data: This data usually has a limited or fixed, number of possible values, stored as string values which are used to describe some traits of the observations, for example gender or age group  (Pathak 2018). In the iris dataset, the variable "species" represents categorical data, as it has a fixed number of values: setosa, versicolor or virginica. Since there is no order to the data, this data can also be described as nominal data as opposed to ordinal data which has an order or ranking associated with them, for example economic class or Likert Scale.
+* Continous Data: Pathak (2018) describes continous data as "numeric variables that have an infinite number of values between any two values". Examples of continuous data are, temperature, height, weight. In the iris dataset, the variables sepal_length, sepal_width, petal_length, petal_width represents continous data.
+
 #### Iris Dataset
 Below is a table displaying the Iris Dataset. I created this table as follows:
 * I converted the iris.csv to iris.md using the csvtomd program https://github.com/mplewis/csvtomd.
@@ -306,5 +311,5 @@ I was able to interpret the following from the swarmplot:
 9. SAS Institute (2019) *Scatterplot Matrix" [Online] Available at: https://www.jmp.com/support/help/14-2/scatterplot-matrix.shtml [Accessed 14 April 2019]
 10. Waskom, M (2012-2018) *Scatterplot Matrix* [Online] Available at:https://seaborn.pydata.org/examples/scatterplot_matrix.html# [Accessed 13 April 2019]
 11. Willems, K (Aug-2017) *Python Seaborn Tutorial For Beginners* [Online] Available at: https://www.datacamp.com/community/tutorials/seaborn-python-tutorial#load [Accessed 13 April 2019]
-12 Chris, user:354577 (2016) *what-do-raw-githubusercontent-com-urls-represent" [Online] Available at:https://raw.githubusercontent.com/pcaulfie/pands-project/master/iris.md [Accessed 26 April 2019]
-
+12. Chris, user:354577 (2016) *what-do-raw-githubusercontent-com-urls-represent" [Online] Available at:https://raw.githubusercontent.com/pcaulfie/pands-project/master/iris.md [Accessed 26 April 2019]
+13. Pathak, M (2018) *Handling Categorical Data in Python* [Online] Available at: https://www.datacamp.com/community/tutorials/categorical-data [Accessed 27 April 2019] 
