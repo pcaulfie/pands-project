@@ -376,3 +376,4 @@ I adapted the solution from https://www.kaggle.com/morenoh149/iris-anova-table-p
 13. Pathak, M (2018) *Handling Categorical Data in Python* [Online] Available at: https://www.datacamp.com/community/tutorials/categorical-data [Accessed 27 April 2019] 
 14. Ranjan, S (2018) *Python | Pandas dataframe.info()* [Online] Available at:   https://www.geeksforgeeks.org/python-pandas-dataframe-info/ [Accessed 27 April 2019] 
 15. Scipy Community, (2008-2009) *Data types*  [Online] Available at: https://docs.scipy.org/doc/numpy-1.13.0/user/basics.types.html [Accessed 27 April 2019] 
+16. Rajesh, L (2018) *Iris Dataset - Exploratory Data Analysis* [Online] Available at: https://www.kaggle.com/lalitharajesh/iris-dataset-exploratory-data-analysis/data [Accessed 13 April 2019]
