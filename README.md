@@ -334,6 +334,7 @@ I adapted the solution from https://www.kaggle.com/morenoh149/iris-anova-table-p
 * Specify C for Categorical - in this case I use species as the categorical
 * display results in Type 2 Anova dataframe
 * repeat steps for other 3 variables, so I can view results for all 4 variables at same time
+* Link to program: https://github.com/pcaulfie/pands-project/blob/master/anova.py
 ##### Results
 ![Anova](https://github.com/pcaulfie/pands-project/blob/master/One%20Way%20Anova.JPG)
 ##### Interpretation of Results
@@ -356,11 +357,7 @@ I adapted the solution from https://www.kaggle.com/morenoh149/iris-anova-table-p
 ##### Interpretation of Results
 * As the p value (Pr(>F) for all 3 tests, is > 0.05 (α), the null hypothesis must be rejected. The null hypotheses states that the means of all species are all equal, this is usually defined as a significance level (denoted as α or alpha) of 0.05. This back up the earlier findings that the differences between the species is statistically significant.
 
-
-#### Investigation of Python Packages using data set in their tutorials
-#### Pandas - e.g scatter diagrams 
-### Summary of Investigation at beginning or end?
-
+### Summary of Investigation
 
 
 ## References
