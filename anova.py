@@ -12,10 +12,22 @@ from statsmodels.formula.api import ols
 # adapted from https://www.datacamp.com/community/tutorials/exploratory-data-analysis-python
 df = pd.read_csv("https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/d546eaee765268bf2f487608c537c05e22e4b221/iris.csv", delimiter=',')
 
-# iris_lm_one_categorical=ols('sepal_length ~ C(species)', data=df).fit() 
+iris_lm_one_categorical=ols('sepal_length ~ C(species)', data=df).fit() 
 #Specify C for Categorical
-# print(sm.stats.anova_lm(iris_lm_one_categorical, typ=2))
+print("One Way Anova - sepal_length")
+print(sm.stats.anova_lm(iris_lm_one_categorical, typ=2))
 
-iris_lm=ols('sepal_length ~ C(species) + sepal_width + petal_length + petal_width', data=df).fit() 
-# Specify C for Categorical
-print(sm.stats.anova_lm(iris_lm, typ=2))
+iris_lm_one_categorical2=ols('sepal_width ~ C(species)', data=df).fit() 
+#Specify C for Categorical
+print("One Way Anova - sepal_width")
+print(sm.stats.anova_lm(iris_lm_one_categorical2, typ=2))
+
+iris_lm_one_categorical3=ols('petal_length ~ C(species)', data=df).fit() 
+#Specify C for Categorical
+print("One Way Anova - petal_length")
+print(sm.stats.anova_lm(iris_lm_one_categorical3, typ=2))
+
+iris_lm_one_categorical4=ols('petal_width ~ C(species)', data=df).fit() 
+#Specify C for Categorical
+print("One Way Anova - petal_width")
+print(sm.stats.anova_lm(iris_lm_one_categorical4, typ=2))
