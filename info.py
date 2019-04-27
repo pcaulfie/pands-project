@@ -10,5 +10,6 @@ import pandas as pd
 # Creating the dataframe  
 df = pd.read_csv("iris.csv") 
 
-# display results of .info() function
-print(df.info())
+# # Print the full summary of the dataframe 
+# with null count excluded source https://www.geeksforgeeks.org/python-pandas-dataframe-info/
+print(df.info(verbose = True, null_counts = False))
