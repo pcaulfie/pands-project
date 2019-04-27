@@ -17,5 +17,3 @@ print(df.corr(method ='pearson'))
 print("")
 print("Kendall Method")
 print(df.corr(method ='kendall'))
-
-
