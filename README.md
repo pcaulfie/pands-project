@@ -305,7 +305,23 @@ I was able to interpret the following from the swarmplot:
 * For each of the other two species, there appears to be a uniform distribution.
 * The data points in the swarmplot for petal length and petal width are the most narrowly distributed, whereas the distribution of the other variables was much wider.
 * These findings could form the basis of some hypotheses which I will test later, including Analysis of Variance (ANOVA).
-#### Research other ways to summarize the data set
+
+#### Hypotheses Testing - One Way Anova
+So far we have learned that the species setosa appears to be very different to the other two species. I needed to test this hypotheses. I used one-way analysis of variance (ANOVA) to determine whether there is any statistically significant differences between the species.
+I adapted the solution from https://www.kaggle.com/morenoh149/iris-anova-table-python
+* Import the `pandas` library as `pd`, 
+* Import the `statsmodels` library as `sm`
+* Import ols (OLS regression library)
+* Load in the datato the dataframe with `read_csv()` 
+* create a one dimensional array using species as categorical and sepal length as variable dimension
+* Specify C for Categorical - in this case I use species as the categorical
+* display results in Type 2 Anova dataframe
+* repeat steps for other 3 variables, so I can view results for all 4 variables at same time
+##### Results
+![Anova](https://github.com/pcaulfie/pands-project/blob/master/One%20Way%20Anova.JPG)
+##### Interpretation of Results
+* As the p value (Pr(>F) for all tests, is > 0.05 (α), the null hypothesis must be rejected. The null hypotheses states that the means of all species are all equal, this is usually defined as a significance level (denoted as α or alpha) of 0.05. This back up the earlier findings that the differences between the species is statistically significant.
+
 
 
 #### Investigation of Python Packages using data set in their tutorials
