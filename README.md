@@ -45,21 +45,21 @@ The data set is made up of two data types: categorical and continous data.
 
 #### Iris Dataset
 Below is a table displaying the Iris Dataset. I created this table as follows:
-* I converted the iris.csv to iris.md using the csvtomd program https://github.com/mplewis/csvtomd.
+* I converted the iris.csv to iris.md using the csvtomd program, [link](https://github.com/mplewis/csvtomd).
 * To do this I first had to install the csvtomd program using the command pip3 install csvtomd at the CLI.
 * Next, I ran the command on the command line: csvtomd iris.csv > iris.md .
 ![Command Line](https://github.com/pcaulfie/pands-project/blob/master/csvtomd%20command.JPG)
 * The I pushed the iris.md file to the repository.
-* I opened iris.md in the repository and clicked on the "Raw" button, which opened the https://raw.githubusercontent.com/pcaulfie/pands-project/master/iris.md which is an unprocessed version of the iris.md file. 
-* I then copied the raw table and pasted it into the readme, see Appendix 1 or click on this link [iris](iris.md)
+* I opened iris.md in the repository and clicked on the "Raw" button, which opened an unprocessed version of the iris.md file. 
+* I then copied the raw table and pasted it into the readme, see Appendix 1 or click on this link: [iris](iris.md).
 
 ## Investigation of the Data Set
 
 ### Importing the Data
-Before I could begin exploring the Iris Dataset, I had to load in the data. I used the Pandas library (https://pandas.pydata.org/) to simplify the task and I used the standard conventions (Willems, Mar-2017): 
+Before I could begin exploring the Iris Dataset, I had to load in the data. I used the Pandas library [link](https://pandas.pydata.org/) to simplify the task and I used the standard conventions (Willems, Mar-2017): 
 * First you import the Pandas package as pd, 
 * Next, you use the read_csv() function, 
-* Then you pass the URL in which the dataset can be found. I chose to use the following URL as the source: https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/d546eaee765268bf2f487608c537c05e22e4b221/iris.csv
+* Then you pass the URL in which the dataset can be found. I chose to use the following URL as the source: [link](https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/d546eaee765268bf2f487608c537c05e22e4b221/iris.csv)
 * Finally, you add a header argument and delimiter to make sure that your data is read in correctly (pandas.pydata.org, 2019).
   * As the first row of the dataset contains the columns names, I did not need to pass a header argument, instead pandas infers that the     first line will contain the column names. 
   * Pandas defaults the delimiter as comma unless you are trying to read in a file in another format. 
@@ -73,7 +73,7 @@ I used the describe() function to view some basic summary statistics. "This func
 * Next, you use the read_csv() function, 
 * Then you use the describe() function to get various summary statistics,
 * Finally, you include the print function to display the results.
-* Link to program : https://github.com/pcaulfie/pands-project/blob/master/describe.py
+* [Link to program :] (https://github.com/pcaulfie/pands-project/blob/master/describe.py)
 ##### Results
 ![Summary Statistics](https://github.com/pcaulfie/pands-project/blob/master/describe.JPG)
 ##### Interpretation of Results
