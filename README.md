@@ -158,8 +158,9 @@ I decided to use Pandas dataframe.corr() to find the pairwise correlation of all
 ![Correlation](https://github.com/pcaulfie/pands-project/blob/master/Correlation%20-%20Pearson%20%26%20Kendall%20Method.JPG)
 ##### Interpretation of Results
 * The correlation coefficient of a variable with itself is 1.
-* The correlation coefficient of the following pairs of variables was strongest; petal_length & petal width, suggesting a strong positive relationship, when one variable increases, the other increases. 
+* The correlation coefficient of the following pairs of variables was strongest; petal_length & petal width, suggesting a strong positive relationship, when one variable increases, the other increases. However, these results must be interpreted carefully as I didnt look at the correlation within species. 
   * This was the same finding published by University of California, Irvine (1988).
+  * Nichols (2014) wrote that "assertion that Petal.Length and Petal.Width are highly positively correlated is misleading. When looking at individual species, it transpires that the within-species correlation between between Petal.Length and Petal.Width is much weaker". 
 * The correlation coefficient of the following pairs of variables was next strongest; petal_length & sepal length, suggesting a strong positive relationship, ie as one variable increases, the other increases.
 * The correlation coefficient of the following pairs of variables was smallest; sepal_length & sepal width, suggesting a very weak negative relationship between, when one variable increases, the other decreases.
 * The correlation coefficient of the following pairs of variables was also weak; petal_width & sepal width, suggesting a very weak negative relationship between, when one variable increases, the other decreases.
@@ -234,6 +235,7 @@ I used two-way analysis of variance (ANOVA) to determine whether there is any st
 
 ### Conculsions and Recommendations
 As the species setosa, seem to share little in common with the species versicolor and virginica, the above results must be interpreted carefully. I agree with Nichols (2014) that you could draw different conclusions from the data set depending on what question you asked. For instance, if the species setosa was excluded from the dataset, entirely different conclusion could be drawn. If I were to undertake this study again, instead of trying to assess if pairs of variables are correlated, over all plants in the study, I would to study each species separately. 
+I recommend exploring other statistical modelling techniques such as Support Vectom Machines, KNN K - Nearest Neighbours (KNN) Algorithm and Regression in order to test the dataset further.
 
 
 
