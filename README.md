@@ -44,7 +44,7 @@ I used the Pandas dataframe.info() function to get a quick overview of the datas
 * Step 2: Create the dataframe df = pd.read_csv("iris.csv"),
 * Step 3: Print the full summary of the dataframe with null count excluded,
 * Link to program: [Info.py](https://github.com/pcaulfie/pands-project/blob/master/info.py)
-#### Results
+#### Table 1. Overview of Dataset
 ![info](https://github.com/pcaulfie/pands-project/blob/master/info.JPG)
 #### Interpretation of Results
 * The dataframe rangeindex is 150 which means that it contains 150 rows which are indexed beginning with 0 for first row and ending with 149 for last row.
@@ -79,7 +79,7 @@ I used the describe() function to view some basic summary statistics. "This func
 * Then you use the describe() function to get various summary statistics,
 * Finally, you include the print function to display the results.
 * Link to program: [Describe.py](https://github.com/pcaulfie/pands-project/blob/master/describe.py)
-##### Results
+##### Table 2. Summary Statistics
 ![Summary Statistics](https://github.com/pcaulfie/pands-project/blob/master/describe.JPG)
 ##### Interpretation of Results
 A quick look at the data shows that standard deviation of petal_length is greater than any of the other 3 variables. This is worth investigating further in case there are any outliers.
@@ -92,8 +92,8 @@ I wanted to investigate the petal_length results, to see how many rows of data w
 * The I modified which columns would be displayed using df.iloc function,
 * The final step is to display the results.
 * Link to program: [Test.py](https://github.com/pcaulfie/pands-project/blob/master/test.py)
-##### Results
-See Appendix 2 or clink on the following link [test results](test.txt).
+##### Query Results
+See Appendix 2 or clink on the following link to view the results of the query, [test results](test.txt).
 ##### Interpretation of Results
 It is clear from the results that all the iris setosa samples have a petal length less than 2. This is significant as this is more than one standard deviation from the mean. If the species setosa differs significantly for one variable (petal length), the next step would be to test other variables. 
 
@@ -103,8 +103,8 @@ I needed a quick way to summarize the data and sort the results by species to se
 * Next, you use the read_csv() function, 
 * Then you use create the pivot tables, by selecting the values you want to display and the index field (species) and what aggfunc you wish to apply to aggregate the data i.e. mean and standard deviation,
 * Finally, you include the print function to display the results and titles for each pivot table.
-* [Pivot.py](https://github.com/pcaulfie/pands-project/blob/master/pivot.py)
-##### Results
+* Link to program: [Pivot.py](https://github.com/pcaulfie/pands-project/blob/master/pivot.py)
+##### Table 3. Pivot Table
 ![Pivot Table](https://github.com/pcaulfie/pands-project/blob/master/pivot%20table.JPG)
 ##### Interpretation of Results
 I was able to interpret the following from the pivot tables:
@@ -123,7 +123,7 @@ Here is an overview of the program I wrote adapted from an example by Waskom [(2
 * You decide how to customize the way the plots are displayed using Hue, Palette and Markers etc.,
 * Finally, you display the scatterplot using plt.show,
 * Link to program: [Scatterplot_Matrix.py](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot_Matrix.py)
-##### Results
+##### Figure 1. Scatterplot Matrix
 ![Scatterplot Matrix](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot%20Matrix.png)
 ##### Interpretation of Results
 The first this you will notice when you look at the data is that the species setosa does not seem to have any relationship with the other two species. I was able to interpret the following:
@@ -140,8 +140,8 @@ The scatterplot above suggested that there is a strong relationship between sepa
 * Use corr() function to find the correlation among the columns using kendall method,
 * Print results,
 * Link to program: [Correlation.py](https://github.com/pcaulfie/pands-project/blob/master/correlation.py)
-##### Results
-!Link to program: [Correlation](https://github.com/pcaulfie/pands-project/blob/master/Correlation%20-%20Pearson%20%26%20Kendall%20Method.JPG)
+##### Table 4. Pairwise Correlation
+![Correlation](https://github.com/pcaulfie/pands-project/blob/master/Correlation%20-%20Pearson%20%26%20Kendall%20Method.JPG)
 ##### Interpretation of Results
 * The correlation coefficient of a variable with itself is 1.
 * The correlation coefficient of the following pairs of variables was strongest; petal_length & petal width, suggesting a strong positive relationship, when one variable increases, the other increases.
@@ -154,14 +154,14 @@ As there is a lot of overlapping data in a scatterplot, it can be difficult to g
 Here is an overview of the program I wrote adapted from an example by [Willems (Aug-2017)](https://seaborn.pydata.org/generated/seaborn.swarmplot.html):
 * First you import seaborn as sns,
 * Then you import matplotlib.pyplot as plt,
-* Set context to `"paper"` control the plot elements. Paper is the smallest of the four preset contexts,
-* Load iris data  as "df" from built-in Seaborn dataset,
+* Set context to paper control the plot elements. Paper is the smallest of the four preset contexts,
+* Load iris data as df from built-in Seaborn dataset,
 * Define the area of the plot,
 * Use subplot to compare different views of data side by side ,
 * Construct iris swarmplot,
 * Show swarmplot.
 * Link to program: [Swarmplot.py](https://github.com/pcaulfie/pands-project/blob/master/swarmplot.py)
-##### Results
+##### Figure 2. Swarmplot Matrix
 ![Swarmplot](https://github.com/pcaulfie/pands-project/blob/master/Swarmplot.png "Swarmplot")
 ##### Interpretation of Results
 I was able to interpret the following from the swarmplot:
@@ -182,7 +182,7 @@ I adapted the solution from [(Moreno, 2019)](https://www.kaggle.com/morenoh149/i
 * display results in Type 2 Anova dataframe,
 * repeat steps for other 3 variables, so I can view results for all 4 variables at same time,
 * Link to program: [Anova.py](https://github.com/pcaulfie/pands-project/blob/master/anova.py)
-##### Results
+##### Table 5. One Way Anova
 ![Anova](https://github.com/pcaulfie/pands-project/blob/master/One%20Way%20Anova.JPG)
 ##### Interpretation of Results
 * As the p value (Pr(>F) for all tests, is > 0.05 (α), the null hypothesis must be rejected. The null hypotheses states that the means of all species are all equal, this is usually defined as a significance level (denoted as α or alpha) of 0.05. This back up the earlier findings that the differences between the species is statistically significant.
@@ -199,7 +199,7 @@ I adapted the solution from [(Moreno, 2019)](https://www.kaggle.com/morenoh149/i
 * Display results in Type 2 Anova dataframe,
 * Repeat steps for other combination variables, so I can view results for all combinations at same time
 * Link to program: [2wayanova.py](https://github.com/pcaulfie/pands-project/blob/master/2wayanova.py)
-##### Results
+##### Table 5. Two Way Anova
 ![2WayAnova](https://github.com/pcaulfie/pands-project/blob/master/Two%20Way%20Anova.JPG)
 ##### Interpretation of Results
 * As the p value (Pr(>F) for all 3 tests, is > 0.05 (α), the null hypothesis must be rejected. The null hypotheses states that the means of all species are all equal, this is usually defined as a significance level (denoted as α or alpha) of 0.05. This back up the earlier findings that the differences between the species is statistically significant.
