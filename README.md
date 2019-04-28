@@ -6,7 +6,7 @@ This document contains my research and investigation of the Iris Data Set.
 
 ## Getting Started
 
-I have created a GitHub Repository where you can access my project, its files, and the commit history. See link: https://github.com/pcaulfie/pands-project.
+I have created a [GitHub Repository](https://github.com/pcaulfie/pands-project) where you can access my project, its files, and the commit history.
 
 ## Iris Flower Data Set - Overview / Short Summary
 ### About This Data Set
@@ -25,11 +25,11 @@ The data set is a comma-separated values (csv) file with 150 records (rows of da
 * The first line of the file is the header line. The header line contains the names of the 5 fields: sepal_length, sepal_width, petal_length, petal_width, and species.
 * The fields of data in the header line and each record (row) are delimited with a comma.
 ### Summary of Dataframe
-I used the Pandas dataframe.info() function is used to get a quick overview of the datase. This overview is useful to have when conductiong exploratory data analysis (Ranjan, 2018). I used the dataframe.info() function to gather information about the number of rows, columns, column data types, memory usage, etc. I adpated the program from https://www.datacamp.com/community/tutorials/categorical-data and https://www.geeksforgeeks.org/python-pandas-dataframe-info/
+I used the Pandas dataframe.info() function is used to get a quick overview of the datase. This overview is useful to have when conductiong exploratory data analysis (Ranjan, 2018). I used the dataframe.info() function to gather information about the number of rows, columns, column data types, memory usage, etc. I adpated the program from [Datacamp](https://www.datacamp.com/community/tutorials/categorical-data) and [GeeksforGeeks](https://www.geeksforgeeks.org/python-pandas-dataframe-info/)
 * Step 1: import pandas as pd,
 * Step 2: Create the dataframe df = pd.read_csv("iris.csv"),
 * Step 3: Print the full summary of the dataframe with null count excluded,
-* Link to program: https://github.com/pcaulfie/pands-project/blob/master/info.py
+* [Info.py](https://github.com/pcaulfie/pands-project/blob/master/info.py)
 #### Results
 ![info](https://github.com/pcaulfie/pands-project/blob/master/info.JPG)
 #### Interpretation of Results
@@ -45,7 +45,7 @@ The data set is made up of two data types: categorical and continous data.
 
 #### Iris Dataset
 Below is a table displaying the Iris Dataset. I created this table as follows:
-* I converted the iris.csv to iris.md using the csvtomd program, [link](https://github.com/mplewis/csvtomd).
+* I converted the iris.csv to iris.md using the [csvtomd program](https://github.com/mplewis/csvtomd).
 * To do this I first had to install the csvtomd program using the command pip3 install csvtomd at the CLI.
 * Next, I ran the command on the command line: csvtomd iris.csv > iris.md .
 ![Command Line](https://github.com/pcaulfie/pands-project/blob/master/csvtomd%20command.JPG)
@@ -56,10 +56,10 @@ Below is a table displaying the Iris Dataset. I created this table as follows:
 ## Investigation of the Data Set
 
 ### Importing the Data
-Before I could begin exploring the Iris Dataset, I had to load in the data. I used the Pandas library [link](https://pandas.pydata.org/) to simplify the task and I used the standard conventions (Willems, Mar-2017): 
+Before I could begin exploring the Iris Dataset, I had to load in the data. I used the [Pandas library](https://pandas.pydata.org/) to simplify the task and I used the standard conventions (Willems, Mar-2017): 
 * First you import the Pandas package as pd, 
 * Next, you use the read_csv() function, 
-* Then you pass the URL in which the dataset can be found. I chose to use the following URL as the source: [link](https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/d546eaee765268bf2f487608c537c05e22e4b221/iris.csv)
+* Then you pass the URL in which the dataset can be found. I used the following URL as the source: [link](https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/d546eaee765268bf2f487608c537c05e22e4b221/iris.csv)
 * Finally, you add a header argument and delimiter to make sure that your data is read in correctly (pandas.pydata.org, 2019).
   * As the first row of the dataset contains the columns names, I did not need to pass a header argument, instead pandas infers that the     first line will contain the column names. 
   * Pandas defaults the delimiter as comma unless you are trying to read in a file in another format. 
@@ -73,7 +73,7 @@ I used the describe() function to view some basic summary statistics. "This func
 * Next, you use the read_csv() function, 
 * Then you use the describe() function to get various summary statistics,
 * Finally, you include the print function to display the results.
-* [Link to program :] (https://github.com/pcaulfie/pands-project/blob/master/describe.py)
+* [Describe.py](https://github.com/pcaulfie/pands-project/blob/master/describe.py)
 ##### Results
 ![Summary Statistics](https://github.com/pcaulfie/pands-project/blob/master/describe.JPG)
 ##### Interpretation of Results
@@ -86,21 +86,21 @@ I wanted to investigate the petal_length results, to see how many rows of data w
 * Then you use the query function to filter the data frame for Petal length < 2,
 * The I modified which columns would be displayed using df.iloc function,
 * The final step is to display the results.
-* Link to program : https://github.com/pcaulfie/pands-project/blob/master/test.py
+* [Test.py](https://github.com/pcaulfie/pands-project/blob/master/test.py)
 ##### Results
 ![test results](test.txt)
 ##### Interpretation of Results
 It is clear from the results that all the iris setosa samples have a petal length less than 2. This is significant as this is more than one standard deviation from the mean. If the species setosa differs significantly for one variable (petal length), the next step would be to test other variables. 
 
 #### Pivot Table
-I needed a quick way to summarize the data and sort the results by species to see if the initial findings about iris setosa are backed up I also wanted to test the other variables, to see if there are any other significant patterns in the data. I decided to use a pivot table to summarize the data. I adapted my program from solution I found in https://towardsdatascience.com/python-for-data-science-from-scratch-part-ii-e4dd4b943aba. 
+I needed a quick way to summarize the data and sort the results by species to see if the initial findings about iris setosa are backed up I also wanted to test the other variables, to see if there are any other significant patterns in the data. I decided to use a pivot table to summarize the data. I adapted my program from [link](https://towardsdatascience.com/python-for-data-science-from-scratch-part-ii-e4dd4b943aba). 
 * First you import the package pandas as pd, and numpy as np,
 * Next, you use the read_csv() function, 
 * Then you use create the pivot tables, by selecting the values you want to display and the index field (species) and what aggfunc you wish to apply to aggregate the data i.e. mean and standard deviation,
 * Finally, you include the print function to display the results and titles for each pivot table.
-* Link to program : https://github.com/pcaulfie/pands-project/blob/master/pivot.py
+* [Pivot.py](https://github.com/pcaulfie/pands-project/blob/master/pivot.py)
 ##### Results
-![](https://github.com/pcaulfie/pands-project/blob/master/pivot%20table.JPG)
+![Pivot Table](https://github.com/pcaulfie/pands-project/blob/master/pivot%20table.JPG)
 ##### Interpretation of Results
 I was able to interpret the following from the pivot tables:
 * The species setosa, differs significantly from other species, for the mean value of the variable's petal_length and petal_width.
@@ -108,7 +108,7 @@ I was able to interpret the following from the pivot tables:
 * The mean and standard deviation of the other 2 species seem to be positively correlated, suggesting that they may have some common characteristics. The species setosa, seem to share little in common with the species versicolor and virginica.
 
 #### Scatterplot Matrix
-Outliers are data that contain values that diverge significantly from most of your other data (Willems Mar-2017). I decided to make a scatter plot of to identify if there are any data points that don’t lie in the “expected” area of the plot. I used the Seaborn library to create the scatterplot (http://seaborn.pydata.org/). Seaborn has an impressive gallery and I decided to visualize the dataset using a scatterplot matrix. "A scatterplot matrix is a collection of scatterplots organized into a grid (or matrix). Each scatterplot shows the relationship between a pair of variables" (SAS Institute 2019).
+Outliers are data that contain values that diverge significantly from most of your other data (Willems Mar-2017). I decided to make a scatter plot of to identify if there are any data points that don’t lie in the “expected” area of the plot. I used the [Seaborn library](http://seaborn.pydata.org/) to create the scatterplot . Seaborn has an impressive gallery and I decided to visualize the dataset using a scatterplot matrix. "A scatterplot matrix is a collection of scatterplots organized into a grid (or matrix). Each scatterplot shows the relationship between a pair of variables" (SAS Institute 2019).
 Here is an overview of the program I wrote adapted from an example by Waskom (2012-2018):
 * First you import seaborn as sns, I also had to install seaborn via the anaconda prompt using command: pip install seaborn
 * Then you import matplotlib.pyplot as plt
@@ -117,10 +117,9 @@ Here is an overview of the program I wrote adapted from an example by Waskom (20
 * The next step is to construct iris scatterplot using pairplot function 
 * You decide how to customize the way the plots are displayed using Hue, Palette and Markers etc.
 * Finally, you display the scatterplot using plt.show
-* Link to program : https://github.com/pcaulfie/pands-project/blob/master/Scatterplot_Matrix.py
+* [Scatterplot_Matrix.py](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot_Matrix.py)
 ##### Results
-![alt text](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot%20Matrix.png "Scatterplot Matrix")
-Figure: ![Scatterplot Matrix - Iris Dataset](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot_Matrix.py)
+![Scatterplot Matrix](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot%20Matrix.png)
 ##### Interpretation of Results
 The first this you will notice when you look at the data is that the species setosa does not seem to have any relationship with the other two species. I was able to interpret the following:
 * There appears to be a strong relationship between sepal length and sepal width.
@@ -129,15 +128,15 @@ The first this you will notice when you look at the data is that the species set
 * These findings could form the basis of some hypotheses which I will test later, including Analysis of Variance (ANOVA).
 
 #### Correlation
-The scatterplot above suggested that there is a strong relationship between sepal length and sepal width. I decided to use Pandas dataframe.corr() to find the pairwise correlation of all columns in the dataframe, this would prove my theory that sepal length and sepal width have a high correlation. I adapted my program from https://www.geeksforgeeks.org/python-pandas-dataframe-corr/
+The scatterplot above suggested that there is a strong relationship between sepal length and sepal width. I decided to use Pandas dataframe.corr() to find the pairwise correlation of all columns in the dataframe, this would prove my theory that sepal length and sepal width have a high correlation. I adapted my program from [link](https://www.geeksforgeeks.org/python-pandas-dataframe-corr/)
 * import pandas as pd 
 * Create the data frame from the csv file 
 * Use corr() function to find the correlation among the columns using pearson method 
 * Use corr() function to find the correlation among the columns using kendall method 
 * Print results
-* Link to program: https://github.com/pcaulfie/pands-project/blob/master/correlation.py
+* [Correlation.py](https://github.com/pcaulfie/pands-project/blob/master/correlation.py)
 ##### Results
-![correlation](https://github.com/pcaulfie/pands-project/blob/master/Correlation%20-%20Pearson%20%26%20Kendall%20Method.JPG)
+![Correlation](https://github.com/pcaulfie/pands-project/blob/master/Correlation%20-%20Pearson%20%26%20Kendall%20Method.JPG)
 ##### Interpretation of Results
 * The correlation coefficient of a variable with itself is 1.
 * The correlation coefficient of the following pairs of variables was strongest; petal_length & petal width, suggesting a strong positive relationship, when one variable increases, the other increases.
@@ -156,10 +155,9 @@ Here is an overview of the program I wrote adapted from an example by Willems (A
 * Use subplot to compare different views of data side by side ,
 * Construct iris swarmplot,
 * Show swarmplot.
-* Link to program : https://github.com/pcaulfie/pands-project/blob/master/swarmplot.py
+* [Swarmplot.py](https://github.com/pcaulfie/pands-project/blob/master/swarmplot.py)
 ##### Results
-![alt text](https://github.com/pcaulfie/pands-project/blob/master/Swarmplot.png "Swarmplot")
-Figure: ![Swarmplot - Iris Dataset](https://github.com/pcaulfie/pands-project/blob/master/swarmplot.py)
+![Swarmplot](https://github.com/pcaulfie/pands-project/blob/master/Swarmplot.png "Swarmplot")
 ##### Interpretation of Results
 I was able to interpret the following from the swarmplot:
 * In the species setosa, the distribution is different for each of the 4 variables
@@ -169,7 +167,7 @@ I was able to interpret the following from the swarmplot:
 
 #### Hypotheses Testing - One Way Anova
 So far we have learned that the species setosa appears to be very different to the other two species. I needed to test this hypotheses. I used one-way analysis of variance (ANOVA) to determine whether there is any statistically significant differences between the species.
-I adapted the solution from https://www.kaggle.com/morenoh149/iris-anova-table-python
+I adapted the solution from [Kaggle](https://www.kaggle.com/morenoh149/iris-anova-table-python)
 * Import the `pandas` library as `pd`, 
 * Import the `statsmodels` library as `sm`
 * Import ols (OLS regression library)
@@ -178,7 +176,7 @@ I adapted the solution from https://www.kaggle.com/morenoh149/iris-anova-table-p
 * Specify C for Categorical - in this case I use species as the categorical
 * display results in Type 2 Anova dataframe
 * repeat steps for other 3 variables, so I can view results for all 4 variables at same time
-* Link to program: https://github.com/pcaulfie/pands-project/blob/master/anova.py
+* [Anova.py](https://github.com/pcaulfie/pands-project/blob/master/anova.py)
 ##### Results
 ![Anova](https://github.com/pcaulfie/pands-project/blob/master/One%20Way%20Anova.JPG)
 ##### Interpretation of Results
@@ -186,7 +184,7 @@ I adapted the solution from https://www.kaggle.com/morenoh149/iris-anova-table-p
 
 #### Hypotheses Testing - Two Way Anova
 So far we have learned that the species setosa appears to be very different to the other two species. I needed to test this hypotheses. I used two-way analysis of variance (ANOVA) to determine whether there is any statistically significant differences between the species.
-I adapted the solution from https://www.kaggle.com/morenoh149/iris-anova-table-python
+I adapted the solution from [Kaggle](https://www.kaggle.com/morenoh149/iris-anova-table-python)
 * Import the `pandas` library as `pd`, 
 * Import the `statsmodels` library as `sm`
 * Import ols (OLS regression library)
@@ -195,9 +193,9 @@ I adapted the solution from https://www.kaggle.com/morenoh149/iris-anova-table-p
 * Specify C for Categorical - in this case I use species as the categorical
 * display results in Type 2 Anova dataframe
 * repeat steps for other combination variables, so I can view results for all combinations at same time
-* Link to program: https://github.com/pcaulfie/pands-project/blob/master/2wayanova.py
+* [2wayanova.py](https://github.com/pcaulfie/pands-project/blob/master/2wayanova.py)
 ##### Results
-![Anova](https://github.com/pcaulfie/pands-project/blob/master/Two%20Way%20Anova.JPG)
+![2WayAnova](https://github.com/pcaulfie/pands-project/blob/master/Two%20Way%20Anova.JPG)
 ##### Interpretation of Results
 * As the p value (Pr(>F) for all 3 tests, is > 0.05 (α), the null hypothesis must be rejected. The null hypotheses states that the means of all species are all equal, this is usually defined as a significance level (denoted as α or alpha) of 0.05. This back up the earlier findings that the differences between the species is statistically significant.
 
