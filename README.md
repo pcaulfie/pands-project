@@ -10,7 +10,7 @@ I have created a [GitHub Repository](https://github.com/pcaulfie/pands-project) 
 
 ## Iris Flower Data Set - Overview / Short Summary
 ### About This Data Set
-The Iris Flower Data Set also known as Fisher's or Andersons Data Set is a database containing the measurements of three related species of Iris; Iris setosa, Iris versicolor and Iris virginica (University of California, Irvine 1988).  
+The Iris Flower Data Set also known as Fisher's or Andersons Data Set is a database containing the measurements of three related species of Iris; Iris Setosa, Iris Versicolor and Iris Virginica (University of California, Irvine 1988).  
 The data set is a record of the measurements taken from a sample of fifty flowers from each of the three species. The variables measured are; sepal length, sepal width, petal length and petal width. 
 This data set has become an important reference ever since it was first cited by Fisher in his 1936 paper and it is cited regularly to this day, see UCI Machine Learning Repository.
 Fisher (1936) outlines how the data set could be used to illustrate a model which could be used to identify patterns in the data. He interpreted the data, identifying variables could be used to predict which population class an object belonged to. 
@@ -19,32 +19,9 @@ The data was originally recorded by botanist Edgar Andersen (Anderson, Edgar 193
 Ronald Fisher was a British mathematician, biologist and geneticist who is credited as the father of modern statistics (Allison, 2003). He pioneered the development of modern statistical techniques such as Analysis of Variance, Distribution Theory, Mathematical Likelihood and Estimation. He applied these techniques in the area of genetics where he developed theories on topics such as Natural Selection and Fiduciary Inheritance. He was also credited with establishing a new era in experiment design and statistical sampling techniques (Aldrich, 2003).
 
 ## Data Set
-### Format
-The data set is a comma-separated values (csv) file with 150 records (rows of data) and 5 fields (columns) named sepal_length, sepal_width, petal_length, petal_width, and species. CSV is a simple file format used to store tabular data, such as a spreadsheet or database. Files in the CSV format can be imported to and exported from programs that store data in tables, such as Microsoft Excel or OpenOffice Calc (Computer Hope, 2018).
-* Each record (row of data) is located on a separate line, delimited by a line break.
-* The first line of the file is the header line. The header line contains the names of the 5 fields: sepal_length, sepal_width, petal_length, petal_width, and species.
-* The fields of data in the header line and each record (row) are delimited with a comma.
-### Summary of Dataframe
-I used the Pandas dataframe.info() function is used to get a quick overview of the datase. This overview is useful to have when conductiong exploratory data analysis (Ranjan, 2018). I used the dataframe.info() function to gather information about the number of rows, columns, column data types, memory usage, etc. I adpated the program from [Datacamp](https://www.datacamp.com/community/tutorials/categorical-data) and [GeeksforGeeks](https://www.geeksforgeeks.org/python-pandas-dataframe-info/)
-* Step 1: import pandas as pd,
-* Step 2: Create the dataframe df = pd.read_csv("iris.csv"),
-* Step 3: Print the full summary of the dataframe with null count excluded,
-* [Info.py](https://github.com/pcaulfie/pands-project/blob/master/info.py)
-#### Results
-![info](https://github.com/pcaulfie/pands-project/blob/master/info.JPG)
-#### Interpretation of Results
-* The dataframe rangeindex is 150 which means that it contains 150 rows which are indexed beginning with 0 for first row and ending with 150 for last row.
-* The dataframe contains 5 columns or series.
-* 4 columns (sepal_length, sepal_width, petal_length, petal_width) contain floating point (decimal) numbers in the format float64. Float 64 is defined as by Scipy (2008-2009) as "Double precision float: sign bit, 11 bits exponent, 52 bits mantissa".
-* 1 column (species) contains dtype = object which is used used to represent "string" or text fields.
-
-### Data Type
-The data set is made up of two data types: categorical and continous data.
-* Categorical Data: This data usually has a limited or fixed, number of possible values, stored as string values which are used to describe some traits of the observations, for example gender or age group  (Pathak 2018). In the iris dataset, the variable "species" represents categorical data, as it has a fixed number of values: setosa, versicolor or virginica. Since there is no order to the data, this data can also be described as nominal data as opposed to ordinal data which has an order, scale or ranking associated with them, for example economic class or Likert Scale.
-* Continuous Data: Pathak (2018) describes continuous data as "numeric variables that have an infinite number of values between any two values". Examples of continuous data are, temperature, height, weight. In the iris dataset, the variables sepal_length, sepal_width, petal_length, petal_width represents continuous data.
 
 #### Iris Dataset
-Below is a table displaying the Iris Dataset. I created this table as follows:
+In Appendix 1, I have included a table displaying the Iris Dataset. I created this table as follows:
 * I converted the iris.csv to iris.md using the [csvtomd program](https://github.com/mplewis/csvtomd).
 * To do this I first had to install the csvtomd program using the command pip3 install csvtomd at the CLI.
 * Next, I ran the command on the command line: csvtomd iris.csv > iris.md .
@@ -52,6 +29,32 @@ Below is a table displaying the Iris Dataset. I created this table as follows:
 * The I pushed the iris.md file to the repository.
 * I opened iris.md in the repository and clicked on the "Raw" button, which opened an unprocessed version of the iris.md file. 
 * I then copied the raw table and pasted it into the readme, see Appendix 1 or click on this link: [iris](iris.md).
+
+### Format
+The data set is a comma-separated values (csv) file with 150 records (rows of data) and 5 fields (columns) named sepal_length, sepal_width, petal_length, petal_width, and species. CSV is a simple file format used to store tabular data, such as a spreadsheet or database. Files in the CSV format can be imported to and exported from programs that store data in tables, such as Microsoft Excel or OpenOffice Calc (Computer Hope, 2018).
+* Each record (row of data) is located on a separate line, delimited by a line break.
+* The first line of the file is the header line. The header line contains the names of the 5 fields: sepal_length, sepal_width, petal_length, petal_width, and species.
+* The fields of data in the header line and each record (row) are delimited with a comma.
+
+### Summary of Dataframe
+I used the Pandas dataframe.info() function to get a quick overview of the dataset. This overview is useful to have when conducting exploratory data analysis (Ranjan, 2018). I used the dataframe.info() function to gather information about the number of rows, columns, column data types, memory usage, etc. I adpated the program from [Datacamp](https://www.datacamp.com/community/tutorials/categorical-data) and [GeeksforGeeks](https://www.geeksforgeeks.org/python-pandas-dataframe-info/).
+* Step 1: import pandas as pd,
+* Step 2: Create the dataframe df = pd.read_csv("iris.csv"),
+* Step 3: Print the full summary of the dataframe with null count excluded,
+* [Info.py](https://github.com/pcaulfie/pands-project/blob/master/info.py)
+#### Results
+![info](https://github.com/pcaulfie/pands-project/blob/master/info.JPG)
+#### Interpretation of Results
+* The dataframe rangeindex is 150 which means that it contains 150 rows which are indexed beginning with 0 for first row and ending with 149 for last row.
+* The dataframe contains 5 columns or series.
+* 4 columns (sepal_length, sepal_width, petal_length, petal_width) contain floating point (decimal) numbers in the format float64. Float 64 is defined as by Scipy (2008-2009) as "Double precision float: sign bit, 11 bits exponent, 52 bits mantissa".
+* 1 column (species) contains dtype = object which is used used to represent "string" or text fields.
+
+### Data Type
+The data set is made up of two data types: categorical and continous data.
+
+* Categorical Data: This data usually has a limited or fixed, number of possible values, stored as string values which are used to describe some traits of the observations, for example gender or age group (Pathak 2018). In the iris dataset, the variable "species" represents categorical data, as it has a fixed number of values: setosa, versicolor or virginica. Since there is no order to the data, this data can also be described as nominal data as opposed to ordinal data which has an order, scale or ranking associated with them, for example economic class or Likert Scale.
+* Continuous Data: Pathak (2018) describes continuous data as "numeric variables that have an infinite number of values between any two values". Examples of continuous data are, temperature, height, weight. In the iris dataset, the variables sepal_length, sepal_width, petal_length, petal_width represents continuous data.
 
 ## Investigation of the Data Set
 
