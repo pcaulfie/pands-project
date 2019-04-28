@@ -20,10 +20,11 @@ The data was originally recorded by botanist Edgar Andersen (Anderson, Edgar 193
 ### About Ronald Fisher
 Ronald Fisher was a British mathematician, biologist and geneticist who is credited as the father of modern statistics (Allison, 2003). He pioneered the development of modern statistical techniques such as Analysis of Variance, Distribution Theory, Mathematical Likelihood and Estimation. He applied these techniques in the area of genetics where he developed theories on topics such as Natural Selection and Fiduciary Inheritance. He was also credited with establishing a new era in experiment design and statistical sampling techniques (Aldrich, 2003).
 ### Summary of Research
-As mentioned above, the data set has been the subject of many studies, far to many in fact to mention. Here is a summary of the key findings from some of the research published on the data set (University of California, Irvine 1988).
-* The data set contains  150 records, which can be grouped into 3 classes of 50 instances, each representing a species of iris plant. 
-* One class (Iris Setosa) is linearly separable from the other. 
-* The other 2 species (Iris Versicolor and Iris Virginica) are not linearly separable from each other.
+As mentioned above, the data set has been the subject of many studies, far to many in fact to mention. Here is a summary of the key findings from some of the research published on the data set.
+* The data set contains  150 records, which can be grouped into 3 classes of 50 instances, each representing a species of iris plant. One class (Iris Setosa) is linearly separable from the other. The other 2 species (Iris Versicolor and Iris Virginica) are not linearly separable from each other (University of California, Irvine 1988).
+* Santos, R (2018) proved that that petal length of the species setosa is shorter than the petal length of other species.  
+* There is a high correlation between petal length and petal width (University of California, Irvine 1988).
+* Species has predictive power for sepal length (Rajesh 2018).
 
 ## Data Set
 
@@ -87,10 +88,11 @@ I used the describe() function to view some basic summary statistics. "This func
 ##### Table 2. Summary Statistics
 ![Summary Statistics](https://github.com/pcaulfie/pands-project/blob/master/describe.JPG)
 ##### Interpretation of Results
-A quick look at the data shows that standard deviation of petal_length is greater than any of the other 3 variables. This is worth investigating further in case there are any outliers.
+* A quick look at the data shows that standard deviation of petal_length is greater than any of the other 3 variables. This is worth investigating further in case there are any outliers.
+* This results for Max, Min, Mean, Standard Deviation are the same as the results published by [University of California, Irvine (1988)](https://github.com/pcaulfie/pands-project/blob/master/UCI%20Results.JPG).
 
 #### Querying the Data
-I wanted to investigate the petal_length results, to see how many rows of data would have a petal length less than 1 standard deviation from the mean. The mean is 3.75cm and the standard deviation is 1.76, so I decided to check how many rows of data had a petal length less than 2. Here is an overview of the program I wrote adapted from [(Bhutanyi 2019)](https://www.geeksforgeeks.org/python-filtering-data-with-pandas-query-method/):
+Santos, R (2018) proved that that petal length of the species setosa is shorter than the petal length of other species.  I want to investigate this further, to see how many rows of data would have a petal length less than 1 standard deviation from the mean. The mean is 3.75cm and the standard deviation is 1.76, so I decided to check how many rows of data had a petal length less than 2. Here is an overview of the program I wrote adapted from [(Bhutanyi 2019)](https://www.geeksforgeeks.org/python-filtering-data-with-pandas-query-method/):
 * First you import the package pandas as pd, 
 * Next you make the data frame from the iris.csv file ,
 * Then you use the query function to filter the data frame for Petal length < 2,
@@ -138,7 +140,10 @@ The first this you will notice when you look at the data is that the species set
 * These findings could form the basis of some hypotheses which I will test later, including Analysis of Variance (ANOVA).
 
 #### Correlation
-The scatterplot above suggested that there is a strong relationship between sepal length and sepal width. Interesting research from University of California, Irvine (1988) however suggested a high correlation between petal length and petal width.
+The scatterplot above suggested that there may be a strong relationship between sepal length and sepal width. Interesting research from University of California, Irvine (1988) however suggested a high correlation between petal length and petal width, see table 4.0 below.
+
+##### Table 4.0 Summary Statistics: University of California, Irvine (1988)
+![UCI 1988](https://github.com/pcaulfie/pands-project/blob/master/UCI%20Results.JPG)
 
 I decided to use Pandas dataframe.corr() to find the pairwise correlation of all columns in the dataframe, this would prove my theory that sepal length and sepal width have a high correlation. I adapted my program from [(Ranjan, 2018)](https://www.geeksforgeeks.org/python-pandas-dataframe-corr/):
 * Import pandas as pd,
@@ -147,11 +152,12 @@ I decided to use Pandas dataframe.corr() to find the pairwise correlation of all
 * Use corr() function to find the correlation among the columns using kendall method,
 * Print results,
 * Link to program: [Correlation.py](https://github.com/pcaulfie/pands-project/blob/master/correlation.py)
-##### Table 4. Pairwise Correlation
+##### Table 4.1 Pairwise Correlation Results
 ![Correlation](https://github.com/pcaulfie/pands-project/blob/master/Correlation%20-%20Pearson%20%26%20Kendall%20Method.JPG)
 ##### Interpretation of Results
 * The correlation coefficient of a variable with itself is 1.
 * The correlation coefficient of the following pairs of variables was strongest; petal_length & petal width, suggesting a strong positive relationship, when one variable increases, the other increases. 
+  * This was the same finding published by University of California, Irvine (1988).
 * The correlation coefficient of the following pairs of variables was next strongest; petal_length & sepal length, suggesting a strong positive relationship, ie as one variable increases, the other increases.
 * The correlation coefficient of the following pairs of variables was smallest; sepal_length & sepal width, suggesting a very weak negative relationship between, when one variable increases, the other decreases.
 * The correlation coefficient of the following pairs of variables was also weak; petal_width & sepal width, suggesting a very weak negative relationship between, when one variable increases, the other decreases.
@@ -178,7 +184,9 @@ I was able to interpret the following from the swarmplot:
 * These findings could form the basis of some hypotheses which I will test later, including Analysis of Variance (ANOVA).
 
 #### Hypotheses Testing - One Way Anova
-So far we have learned that the species setosa appears to be very different to the other two species. I needed to test this hypotheses. I used one-way analysis of variance (ANOVA) to determine whether there is any statistically significant differences between the species.
+So far we have learned that the species setosa appears to be very different to the other two species. Also Rajesh (2018) concluded that species has predictive power for sepal length.
+
+I needed to test this hypotheses. I used one-way analysis of variance (ANOVA) to determine whether there is any statistically significant differences between the species.
 I adapted the solution from [(Moreno, 2019)](https://www.kaggle.com/morenoh149/iris-anova-table-python):
 * Import the pandas library as pd, 
 * Import the statsmodels library as sm,
@@ -235,6 +243,7 @@ I adapted the solution from [(Moreno, 2019)](https://www.kaggle.com/morenoh149/i
 18. Lewis, M (2018) *Convert your CSV files into Markdown tables* [Online] Available at: https://github.com/mplewis/csvtomd [Accessed 27 April 2019]
 19. Bhutanyi, K (2019) *Python | Filtering data with Pandas .query() method* [Online] Available at: https://www.geeksforgeeks.org/python-filtering-data-with-pandas-query-method/ [Accessed 26 April 2019]
 20. Moreno, H (2019) *Iris dataset ANOVA table* [Online] Available at: https://www.kaggle.com/morenoh149/iris-anova-table-python/notebook [Accessed 13 April 2019]
+21. Santos, R (2018) *Data Science Example - Iris dataset* [Online] Available at:  http://www.lac.inpe.br/~rafael.santos/Docs/R/CAP394/WholeStory-Iris.html [Accessed 13 April 2019]
 
 ## Appendix
 
