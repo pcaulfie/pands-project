@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This document contains my research and data analysis of the Fisher's Iris Data Set using the Python programming language. 
+This document contains my research and data analysis of the [Fisher's Iris Data Set](http://archive.ics.uci.edu/ml/datasets/Iris) using the Python programming language. 
 ![Iris Species](https://github.com/pcaulfie/pands-project/blob/master/iris-setosa.png) 
 
 ## Getting Started
@@ -23,18 +23,20 @@ Ronald Fisher was a British mathematician, biologist and geneticist who is credi
 As mentioned above, the data set has been the subject of many studies, far to many in fact to mention. Here is a summary of the key findings from some of the research published on the data set.
 * The data set contains  150 records, which can be grouped into 3 classes of 50 instances, each representing a species of iris plant. One class (Iris Setosa) is linearly separable from the other. The other 2 species (Iris Versicolor and Iris Virginica) are not linearly separable from each other (University of California, Irvine 1988).
 * Santos, R (2018) proved that that petal length of the species setosa is shorter than the petal length of other species.  
-* There is a high correlation between petal length and petal width (University of California, Irvine 1988).
+* There is a high correlation between petal length and petal width (University of California, Irvine 1988) and (Santos 2018)
 * Species has predictive power for sepal length (Rajesh 2018).
+* Nichols (2014) wrote that "assertion that Petal.Length and Petal.Width are highly positively correlated is misleading. When looking at individual species, it transpires that the within-species correlation between between Petal.Length and Petal.Width is much
+weaker". 
 
 ## Data Set
 
 ### Iris Dataset
 In Appendix 1, I have included a table displaying the Iris Dataset. I created this table as follows:
 * I used a program called csvtomd to convert the iris.csv into markdown table called iris.md [(Lewis 2018)](https://github.com/mplewis/csvtomd).
-* To do this I first had to install the csvtomd program using the command pip3 install csvtomd at the CLI.
+* Before I could run this program, I first had to install the csvtomd program using the command: pip3 install csvtomd at the CLI.
 * Next, I ran the command on the command line: csvtomd iris.csv > iris.md .
 ![Command Line](https://github.com/pcaulfie/pands-project/blob/master/csvtomd%20command.JPG)
-* The I pushed the iris.md file to the repository.
+* Then I pushed the iris.md file to the repository.
 * I opened iris.md in the repository and clicked on the "Raw" button, which opened an unprocessed version of the iris.md file. 
 * I then copied the raw table and pasted it into the readme, see Appendix 1 or click on this link: [iris](iris.md).
 
@@ -53,16 +55,16 @@ I used the Pandas dataframe.info() function to get a quick overview of the datas
 #### Table 1. Overview of Dataset
 ![info](https://github.com/pcaulfie/pands-project/blob/master/info.JPG)
 #### Interpretation of Results
-* The dataframe rangeindex is 150 which means that it contains 150 rows which are indexed beginning with 0 for first row and ending with 149 for last row.
-* The dataframe contains 5 columns or series.
+* The dataframe rangeindex = 150 which means that it contains 150 rows which are indexed beginning with 0 for first row and ending with 149 for last row.
+* The dataframe contains 5 columns.
 * 4 columns (sepal_length, sepal_width, petal_length, petal_width) contain floating point (decimal) numbers in the format float64. Float 64 is defined as by Scipy (2008-2009) as "Double precision float: sign bit, 11 bits exponent, 52 bits mantissa".
 * 1 column (species) contains dtype = object which is used used to represent "string" or text fields.
 
 ### Data Type
 The data set is made up of two data types: categorical and continous data.
 
-* Categorical Data: This data usually has a limited or fixed, number of possible values, stored as string values which are used to describe some traits of the observations, for example gender or age group (Pathak 2018). In the iris dataset, the variable "species" represents categorical data, as it has a fixed number of values: setosa, versicolor or virginica. Since there is no order to the data, this data can also be described as nominal data as opposed to ordinal data which has an order, scale or ranking associated with them, for example economic class or Likert Scale.
-* Continuous Data: Pathak (2018) describes continuous data as "numeric variables that have an infinite number of values between any two values". Examples of continuous data are, temperature, height, weight. In the iris dataset, the variables sepal_length, sepal_width, petal_length, petal_width represents continuous data.
+* Categorical Data: This data usually has a limited or fixed, number of possible values, stored as string values which are used to describe some traits of the observations, for example gender or age group (Pathak 2018). In the iris dataset, the column "species" represents categorical data, as it has a fixed number of values: setosa, versicolor or virginica. Since there is no order to the data, this data can also be described as nominal data as opposed to ordinal data which has an order, scale or ranking associated with them, for example; economic class or Likert Scale.
+* Continuous Data: Pathak (2018) describes continuous data as "numeric variables that have an infinite number of values between any two values". Examples of continuous data are, temperature, height, weight. In the iris dataset, the columns sepal_length, sepal_width, petal_length, petal_width represents continuous data.
 
 ## Investigation of the Data Set
 
@@ -102,7 +104,7 @@ Santos, R (2018) proved that that petal length of the species setosa is shorter 
 ##### Query Results
 See Appendix 2 or clink on the following link to view the results of the query, [test results](test.txt).
 ##### Interpretation of Results
-It is clear from the results that all the iris setosa samples have a petal length less than 2. This is significant as this is more than one standard deviation from the mean. If the species setosa differs significantly for one variable (petal length), the next step would be to test other variables. 
+It is clear from the results that all the iris setosa samples have a petal length less than 2. This is significant as this is more than one standard deviation from the mean. If the species setosa differs significantly for one variable (petal length), the next step would be to test the other 3 variables, petal width, sepal length and sepal width. 
 
 #### Pivot Table
 I needed a quick way to summarize the data and sort the results by species to see if the initial findings about iris setosa are backed up I also wanted to test the other variables, to see if there are any other significant patterns in the data. I decided to use a pivot table to summarize the data. I adapted my program from [Yadav (2019)](https://towardsdatascience.com/python-for-data-science-from-scratch-part-ii-e4dd4b943aba). 
@@ -125,27 +127,27 @@ Here is an overview of the program I wrote adapted from an example by Waskom [(2
 * First you import seaborn as sns, I also had to install seaborn via the anaconda prompt using command: pip install seaborn,
 * Then you import matplotlib.pyplot as plt,
 * Next you set the themes,
-* Then you load iris data  as "df" from built-in Seaborn dataset l,
-* The next step is to construct iris scatterplot using pairplot function,
+* Then you load iris data  as df from built-in Seaborn dataset l,
+* The next step is to construct the iris scatterplot using pairplot function,
 * You decide how to customize the way the plots are displayed using Hue, Palette and Markers etc.,
 * Finally, you display the scatterplot using plt.show,
 * Link to program: [Scatterplot_Matrix.py](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot_Matrix.py)
 ##### Figure 1. Scatterplot Matrix
 ![Scatterplot Matrix](https://github.com/pcaulfie/pands-project/blob/master/Scatterplot%20Matrix.png)
 ##### Interpretation of Results
-The first this you will notice when you look at the data is that the species setosa does not seem to have any relationship with the other two species. I was able to interpret the following:
-* There appears to be a strong relationship between sepal length and sepal width.
+The first this you will notice when you look at the data is that the species setosa does not seem to have any relationship with the other two species. I was also able to interpret the following:
+* There appears to be a weak relationship between sepal length and sepal width as the data points are not tightly packed together.
 * Each pair of variables are positively correlated, when you exclude setosa. This means that as one variable increases, the other     variable tends to increase too.
-* The data points in the scatterplot for petal length and petal width are the most tightly clustered along an imaginary line.
+* The data points in the scatterplot for petal length and petal width are the most tightly clustered along an imaginary line, suggesting a strong relationship.
 * These findings could form the basis of some hypotheses which I will test later, including Analysis of Variance (ANOVA).
 
 #### Correlation
-The scatterplot above suggested that there may be a strong relationship between sepal length and sepal width. Interesting research from University of California, Irvine (1988) however suggested a high correlation between petal length and petal width, see table 4.0 below.
+The scatterplot above suggested that there may be a strong relationship between petal length and petal width. Interesting research from University of California, Irvine (1988) suggested a high correlation between petal length and petal width, see table 4.0 below.
 
 ##### Table 4.0 Summary Statistics: University of California, Irvine (1988)
 ![UCI 1988](https://github.com/pcaulfie/pands-project/blob/master/UCI%20Results.JPG)
 
-I decided to use Pandas dataframe.corr() to find the pairwise correlation of all columns in the dataframe, this would prove my theory that sepal length and sepal width have a high correlation. I adapted my program from [(Ranjan, 2018)](https://www.geeksforgeeks.org/python-pandas-dataframe-corr/):
+I decided to use Pandas dataframe.corr() to find the pairwise correlation of all columns in the dataframe, this would prove my theory that petal length and petal width have a high correlation. I adapted my program from [(Ranjan, 2018)](https://www.geeksforgeeks.org/python-pandas-dataframe-corr/):
 * Import pandas as pd,
 * Create the data frame from the csv file,
 * Use corr() function to find the correlation among the columns using pearson method,
@@ -200,11 +202,10 @@ I adapted the solution from [(Moreno, 2019)](https://www.kaggle.com/morenoh149/i
 ##### Table 5. One Way Anova
 ![Anova](https://github.com/pcaulfie/pands-project/blob/master/One%20Way%20Anova.JPG)
 ##### Interpretation of Results
-* As the p value (Pr(>F) for all tests, is > 0.05 (α), the null hypothesis must be rejected. The null hypotheses states that the means of all species are all equal, this is usually defined as a significance level (denoted as α or alpha) of 0.05. This back up the earlier findings that the differences between the species is statistically significant.
+* As the p value (Pr(>F) for all tests, is > 0.05 (α), the null hypothesis must be rejected. The null hypotheses states that the means of all species are all equal, this is usually defined as a significance level (denoted as α or alpha) of 0.05. This backs up the earlier findings that the differences between the species is statistically significant.
 
 #### Hypotheses Testing - Two Way Anova
-So far we have learned that the species setosa appears to be very different to the other two species. I needed to test this hypotheses. I used two-way analysis of variance (ANOVA) to determine whether there is any statistically significant differences between the species.
-I adapted the solution from [(Moreno, 2019)](https://www.kaggle.com/morenoh149/iris-anova-table-python):
+I used two-way analysis of variance (ANOVA) to determine whether there is any statistically significant differences between the species using a combination of variables. I adapted the solution from [(Moreno, 2019)](https://www.kaggle.com/morenoh149/iris-anova-table-python):
 * Import the pandas library as pd, 
 * Import the statsmodels library as sm,
 * Import ols (OLS regression library),
@@ -220,6 +221,20 @@ I adapted the solution from [(Moreno, 2019)](https://www.kaggle.com/morenoh149/i
 * As the p value (Pr(>F) for all 3 tests, is > 0.05 (α), the null hypothesis must be rejected. The null hypotheses states that the means of all species are all equal, this is usually defined as a significance level (denoted as α or alpha) of 0.05. This back up the earlier findings that the differences between the species is statistically significant.
 
 ### Summary of Investigation
+* The evidence suggest that species setosa, differs significantly from other species. Evidence: 
+  * the mean value of the variable's petal_length and petal_width.
+  * the standard deviation value of the variable's petal_length and petal_width.
+  * The mean and standard deviation of the other 2 species seem to be positively correlated, suggesting that they may have some common characteristics. 
+ 
+* There is evidence to suggest that there is a high correlation between petal length and petal width. Evidence: 
+  * The data points in the scatterplot for petal length and petal width are the most tightly clustered along an imaginary line, suggesting a strong relationship. 
+  * The data points in the swarmplot for petal length and petal width are the most narrowly distributed, whereas the distribution of the other variables was much wider.
+  * The correlation coefficient of the following pairs of variables was strongest; petal_length & petal width, suggesting a strong positive relationship, when one variable increases, the other increases. 
+
+
+### Conculsions and Recommendations
+As the species setosa, seem to share little in common with the species versicolor and virginica, the above results must be interpreted carefully. I agree with Nichols (2014) that you could draw different conclusions from the data set depending on what question you asked. For instance, if the species setosa was excluded from the dataset, entirely different conclusion could be drawn. If I were to undertake this study again, instead of trying to assess if pairs of variables are correlated, over all plants in the study, I would to study each species separately. 
+
 
 
 ## References
@@ -244,7 +259,7 @@ I adapted the solution from [(Moreno, 2019)](https://www.kaggle.com/morenoh149/i
 19. Bhutanyi, K (2019) *Python | Filtering data with Pandas .query() method* [Online] Available at: https://www.geeksforgeeks.org/python-filtering-data-with-pandas-query-method/ [Accessed 26 April 2019]
 20. Moreno, H (2019) *Iris dataset ANOVA table* [Online] Available at: https://www.kaggle.com/morenoh149/iris-anova-table-python/notebook [Accessed 13 April 2019]
 21. Santos, R (2018) *Data Science Example - Iris dataset* [Online] Available at:  http://www.lac.inpe.br/~rafael.santos/Docs/R/CAP394/WholeStory-Iris.html [Accessed 13 April 2019]
-
+22. Nicholls, R (2014) *Tutorial 2: Descriptive Statistics and Exploratory Data Analysis Answers Sheet* [Online] Available at: https://www2.mrc-lmb.cam.ac.uk/download/lectures/lmb_statistics_course_2014/tutorial_answers/Tutorial_2_Descriptive_statistics_and_exploratory_data_analysis_answers.pdf [Accessed 28 April 2019]
 ## Appendix
 
 ### Appendix 1
