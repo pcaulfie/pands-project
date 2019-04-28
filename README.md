@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This document contains my research and investigation of the Iris Data Set. 
+This document contains my research and data analysis of the Fisher's Iris Data Set using the Python programming language. 
 ![Iris Species](https://github.com/pcaulfie/pands-project/blob/master/iris-setosa.png) 
 
 ## Getting Started
@@ -14,11 +14,16 @@ I have created a [GitHub Repository](https://github.com/pcaulfie/pands-project) 
 ### About This Data Set
 The Iris Flower Data Set also known as Fisher's or Andersons Data Set is a database containing the measurements of three related species of Iris; Iris Setosa, Iris Versicolor and Iris Virginica (University of California, Irvine 1988).  
 The data set is a record of the measurements taken from a sample of fifty flowers from each of the three species. The variables measured are; sepal length, sepal width, petal length and petal width. 
-This data set has become an important reference ever since it was first cited by Fisher in his 1936 paper and it is cited regularly to this day, see UCI Machine Learning Repository.
+This data set has become an important reference ever since it was first cited by Fisher in his 1936 paper and it is cited regularly to this day, see UCI Machine Learning Repository (University of California, Irvine 1988).
 Fisher (1936) outlines how the data set could be used to illustrate a model which could be used to identify patterns in the data. He interpreted the data, identifying variables could be used to predict which population class an object belonged to. 
 The data was originally recorded by botanist Edgar Andersen (Anderson, Edgar 1936). 
 ### About Ronald Fisher
 Ronald Fisher was a British mathematician, biologist and geneticist who is credited as the father of modern statistics (Allison, 2003). He pioneered the development of modern statistical techniques such as Analysis of Variance, Distribution Theory, Mathematical Likelihood and Estimation. He applied these techniques in the area of genetics where he developed theories on topics such as Natural Selection and Fiduciary Inheritance. He was also credited with establishing a new era in experiment design and statistical sampling techniques (Aldrich, 2003).
+### Summary of Research
+As mentioned above, the data set has been the subject of many studies, far to many in fact to mention. Here is a summary of the key findings from some of the research published on the data set (University of California, Irvine 1988).
+* The data set contains  150 records, which can be grouped into 3 classes of 50 instances, each representing a species of iris plant. 
+* One class (Iris Setosa) is linearly separable from the other. 
+* The other 2 species (Iris Versicolor and Iris Virginica) are not linearly separable from each other.
 
 ## Data Set
 
@@ -133,7 +138,9 @@ The first this you will notice when you look at the data is that the species set
 * These findings could form the basis of some hypotheses which I will test later, including Analysis of Variance (ANOVA).
 
 #### Correlation
-The scatterplot above suggested that there is a strong relationship between sepal length and sepal width. I decided to use Pandas dataframe.corr() to find the pairwise correlation of all columns in the dataframe, this would prove my theory that sepal length and sepal width have a high correlation. I adapted my program from [(Ranjan, 2018)](https://www.geeksforgeeks.org/python-pandas-dataframe-corr/):
+The scatterplot above suggested that there is a strong relationship between sepal length and sepal width. Interesting research from University of California, Irvine (1988) however suggested a high correlation between petal length and petal width.
+
+I decided to use Pandas dataframe.corr() to find the pairwise correlation of all columns in the dataframe, this would prove my theory that sepal length and sepal width have a high correlation. I adapted my program from [(Ranjan, 2018)](https://www.geeksforgeeks.org/python-pandas-dataframe-corr/):
 * Import pandas as pd,
 * Create the data frame from the csv file,
 * Use corr() function to find the correlation among the columns using pearson method,
@@ -144,7 +151,7 @@ The scatterplot above suggested that there is a strong relationship between sepa
 ![Correlation](https://github.com/pcaulfie/pands-project/blob/master/Correlation%20-%20Pearson%20%26%20Kendall%20Method.JPG)
 ##### Interpretation of Results
 * The correlation coefficient of a variable with itself is 1.
-* The correlation coefficient of the following pairs of variables was strongest; petal_length & petal width, suggesting a strong positive relationship, when one variable increases, the other increases.
+* The correlation coefficient of the following pairs of variables was strongest; petal_length & petal width, suggesting a strong positive relationship, when one variable increases, the other increases. 
 * The correlation coefficient of the following pairs of variables was next strongest; petal_length & sepal length, suggesting a strong positive relationship, ie as one variable increases, the other increases.
 * The correlation coefficient of the following pairs of variables was smallest; sepal_length & sepal width, suggesting a very weak negative relationship between, when one variable increases, the other decreases.
 * The correlation coefficient of the following pairs of variables was also weak; petal_width & sepal width, suggesting a very weak negative relationship between, when one variable increases, the other decreases.
