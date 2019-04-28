@@ -1,4 +1,5 @@
 # Project 2019 - Programming and Scripting
+
 ## Introduction
 
 This document contains my research and investigation of the Iris Data Set. 
@@ -9,6 +10,7 @@ This document contains my research and investigation of the Iris Data Set.
 I have created a [GitHub Repository](https://github.com/pcaulfie/pands-project) where you can access my project, its files, and the commit history.
 
 ## Iris Flower Data Set - Overview / Short Summary
+
 ### About This Data Set
 The Iris Flower Data Set also known as Fisher's or Andersons Data Set is a database containing the measurements of three related species of Iris; Iris Setosa, Iris Versicolor and Iris Virginica (University of California, Irvine 1988).  
 The data set is a record of the measurements taken from a sample of fifty flowers from each of the three species. The variables measured are; sepal length, sepal width, petal length and petal width. 
@@ -20,9 +22,9 @@ Ronald Fisher was a British mathematician, biologist and geneticist who is credi
 
 ## Data Set
 
-#### Iris Dataset
+### Iris Dataset
 In Appendix 1, I have included a table displaying the Iris Dataset. I created this table as follows:
-* I used a program called csvtomd to convert the iris.csv into markdown table called to iris.md [Lewis (2018)](https://github.com/mplewis/csvtomd).
+* I used a program called csvtomd to convert the iris.csv into markdown table called iris.md [(Lewis 2018)](https://github.com/mplewis/csvtomd).
 * To do this I first had to install the csvtomd program using the command pip3 install csvtomd at the CLI.
 * Next, I ran the command on the command line: csvtomd iris.csv > iris.md .
 ![Command Line](https://github.com/pcaulfie/pands-project/blob/master/csvtomd%20command.JPG)
@@ -83,7 +85,7 @@ I used the describe() function to view some basic summary statistics. "This func
 A quick look at the data shows that standard deviation of petal_length is greater than any of the other 3 variables. This is worth investigating further in case there are any outliers.
 
 #### Querying the Data
-I wanted to investigate the petal_length results, to see how many rows of data would have a petal length less than 1 standard deviation from the mean. The mean is 3.75cm and the standard deviation is 1.76, so I decided to check how many rows of data had a petal length less than 2. Here is an overview of the program I wrote:
+I wanted to investigate the petal_length results, to see how many rows of data would have a petal length less than 1 standard deviation from the mean. The mean is 3.75cm and the standard deviation is 1.76, so I decided to check how many rows of data had a petal length less than 2. Here is an overview of the program I wrote adapted from [(Bhutanyi 2019)](https://www.geeksforgeeks.org/python-filtering-data-with-pandas-query-method/):
 * First you import the package pandas as pd, 
 * Next you make the data frame from the iris.csv file ,
 * Then you use the query function to filter the data frame for Petal length < 2,
@@ -112,7 +114,7 @@ I was able to interpret the following from the pivot tables:
 
 #### Scatterplot Matrix
 Outliers are data that contain values that diverge significantly from most of your other data (Willems Mar-2017). I decided to make a scatter plot of to identify if there are any data points that don’t lie in the “expected” area of the plot. I used the [Seaborn library](http://seaborn.pydata.org/) to create the scatterplot . Seaborn has an impressive gallery and I decided to visualize the dataset using a scatterplot matrix. "A scatterplot matrix is a collection of scatterplots organized into a grid (or matrix). Each scatterplot shows the relationship between a pair of variables" (SAS Institute 2019).
-Here is an overview of the program I wrote adapted from an example by Waskom (2012-2018):
+Here is an overview of the program I wrote adapted from an example by Waskom [(2012-2018)](https://seaborn.pydata.org/examples/scatterplot_matrix.html#):
 * First you import seaborn as sns, I also had to install seaborn via the anaconda prompt using command: pip install seaborn,
 * Then you import matplotlib.pyplot as plt,
 * Next you set the themes,
@@ -131,7 +133,7 @@ The first this you will notice when you look at the data is that the species set
 * These findings could form the basis of some hypotheses which I will test later, including Analysis of Variance (ANOVA).
 
 #### Correlation
-The scatterplot above suggested that there is a strong relationship between sepal length and sepal width. I decided to use Pandas dataframe.corr() to find the pairwise correlation of all columns in the dataframe, this would prove my theory that sepal length and sepal width have a high correlation. I adapted my program from [link](https://www.geeksforgeeks.org/python-pandas-dataframe-corr/)
+The scatterplot above suggested that there is a strong relationship between sepal length and sepal width. I decided to use Pandas dataframe.corr() to find the pairwise correlation of all columns in the dataframe, this would prove my theory that sepal length and sepal width have a high correlation. I adapted my program from [(Ranjan, 2018)](https://www.geeksforgeeks.org/python-pandas-dataframe-corr/):
 * Import pandas as pd,
 * Create the data frame from the csv file,
 * Use corr() function to find the correlation among the columns using pearson method,
@@ -149,7 +151,7 @@ The scatterplot above suggested that there is a strong relationship between sepa
 
 #### Swarmplot Matrix
 As there is a lot of overlapping data in a scatterplot, it can be difficult to get a feel for the distribution of values. There are many techniques to visualize the data to provide insights into the distribution of values, such as boxplots and violinplots. I decided to use swarmplots which is a scatterplot with non-overlapping points.
-Here is an overview of the program I wrote adapted from an example by Willems (Aug-2017):
+Here is an overview of the program I wrote adapted from an example by [Willems (Aug-2017)](https://seaborn.pydata.org/generated/seaborn.swarmplot.html):
 * First you import seaborn as sns,
 * Then you import matplotlib.pyplot as plt,
 * Set context to `"paper"` control the plot elements. Paper is the smallest of the four preset contexts,
@@ -170,7 +172,7 @@ I was able to interpret the following from the swarmplot:
 
 #### Hypotheses Testing - One Way Anova
 So far we have learned that the species setosa appears to be very different to the other two species. I needed to test this hypotheses. I used one-way analysis of variance (ANOVA) to determine whether there is any statistically significant differences between the species.
-I adapted the solution from [Kaggle](https://www.kaggle.com/morenoh149/iris-anova-table-python)
+I adapted the solution from [(Moreno, 2019)](https://www.kaggle.com/morenoh149/iris-anova-table-python):
 * Import the pandas library as pd, 
 * Import the statsmodels library as sm,
 * Import ols (OLS regression library),
@@ -187,7 +189,7 @@ I adapted the solution from [Kaggle](https://www.kaggle.com/morenoh149/iris-anov
 
 #### Hypotheses Testing - Two Way Anova
 So far we have learned that the species setosa appears to be very different to the other two species. I needed to test this hypotheses. I used two-way analysis of variance (ANOVA) to determine whether there is any statistically significant differences between the species.
-I adapted the solution from [Kaggle](https://www.kaggle.com/morenoh149/iris-anova-table-python)
+I adapted the solution from [(Moreno, 2019)](https://www.kaggle.com/morenoh149/iris-anova-table-python):
 * Import the pandas library as pd, 
 * Import the statsmodels library as sm,
 * Import ols (OLS regression library),
@@ -224,6 +226,8 @@ I adapted the solution from [Kaggle](https://www.kaggle.com/morenoh149/iris-anov
 16. Rajesh, L (2018) *Iris Dataset - Exploratory Data Analysis* [Online] Available at: https://www.kaggle.com/lalitharajesh/iris-dataset-exploratory-data-analysis/data [Accessed 13 April 2019]
 17. Yadav, R (2019) *Python for Data Science: From Scratch(Part II)* [Online] Available at: https://towardsdatascience.com/python-for-data-science-from-scratch-part-ii-e4dd4b943aba [Accessed 27 April 2019]
 18. Lewis, M (2018) *Convert your CSV files into Markdown tables* [Online] Available at: https://github.com/mplewis/csvtomd [Accessed 27 April 2019]
+19. Bhutanyi, K (2019) *Python | Filtering data with Pandas .query() method* [Online] Available at: https://www.geeksforgeeks.org/python-filtering-data-with-pandas-query-method/ [Accessed 26 April 2019]
+20. Moreno, H (2019) *Iris dataset ANOVA table* [Online] Available at: https://www.kaggle.com/morenoh149/iris-anova-table-python/notebook [Accessed 13 April 2019]
 
 ## Appendix
 
